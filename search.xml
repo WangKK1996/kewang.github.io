@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[数据结构Pyhon（二）-线性表]]></title>
+    <url>%2F2018%2F09%2F24%2F%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84Pyhton%EF%BC%88%E4%BA%8C%EF%BC%89-%E7%BA%BF%E6%80%A7%E8%A1%A8%2F</url>
+    <content type="text"><![CDATA[本章重点 线性表的定义 顺序表和链接表 线性表的概念和表抽象数据结构类型表的概念和性质E中一组有穷个元素排成的序列。表中包含的元素的个数成为表的长度。元素之间的关系成为“下一个关系”，这是一种顺序关系，也称为线性关系，是一种线性结构。 线性表的操作一个线性表可以提供的操作有： 创建线性表的操作； 获取表中信息的解析操作（判断是否为空） 动态改变表的内容； 表的组合操作（merge，subset……） 对表元素的遍历问题（给定对单个元素的操作，也存在可以对表进行的操作） 最后的这两类可以实现变动操作（直接在原表基础上修改）或者非变动操作（在原表基础上产生新表）。 线性表的实现基本考虑： 考虑计算机内容的特点，还有保存元素和元素顺序信息的需要。 各种重要操作的消耗。比如is_empty这种，消耗越小越好。 两种实现模型 顺序表：表中元素顺序地存放在一大块连续的存储区里； 链接表：通过连接构造起来的一系列存储块里。 基本实现方式表里保存的元素类型相同。在顺序表中，可以通过Loc(ei)=Loc(e0)+c * i来计算出ei的位置。时间复杂度为O（1）。 元素类型（长度）不同这个时候可以考虑将实际元素另外存储，而在顺序表里各单位位置保存相应位置的引用信息（链接）。 顺序表基本操作的实现以及时间复杂度 创建和访问操作 简单判断（是否为空，大小）：O（1） 访问指定下标为i的元素：O（1） 遍历操作：给定一个i，然后每次+1（向下）或者-1（向上），时间复杂度为O（n） 查找给定元素d（第一次出现）的位置：检索/查找。 不改变结构的操作，有两种：直接访问，时间复杂度为O（1）；或者基于一个整型变量循环得到结果的，时间复杂度为O（n） 变动操作：加入元素 在尾端加入数据：O（1） 在第i个位置加入元素：有两种情况 不需要保持原来的相对位置：把i的元素移动到位置num。时间复杂度：O（1）； 要保证相对位置：和要移动的元素个数成正比，平均和最坏的情况都为O（n）。变动操作：删除元素 尾端删除：O（1） 在第i个位置删除元素：也有两种情况 不需要保持原来的相对位置：把num-1的元素移动到位置i。时间复杂度：O（1）； 要保证相对位置：和要移动的元素个数成正比，平均和最坏的情况都为O（n）。 基于条件的删除：因为需要对元素进行遍历，故而时间复杂度也为O（n）。 顺序表的结构顺序表可以用两种储存结构： 一体式结构：存储表信息的单元和元素存储区被安排在一块存储区里； 分离式结构：存储表信息的单元和元素存储区不被安排在一起，通过一个连接实现相连。 分离式结构扩容替换元素存储区：分离式结构的优势，可以在标识不变的情况下，为表对象换一块存储区。（可以改变表的容量）。 替换策略：容量加倍每次更换存储区的时候，加倍容量:1,2,4,……。 这样算下来,总元素为n个时，时间复杂度为O（n），平均每个元素的时间复杂度为O（1）。 链接表基本思想 表中的元素独立存储； 组成表结构的任一结点可以找到与其相关的下一结点； 前一节点中，用链接的方式显式地记录与下一结点之间的关联。 单链表结点为二元组，表元素域中保存折作为表元素的数据项以及同一个表里下一个结点的标识。以下定义一个结点类1234class LNode: def __init__(self,elem, next_ = None): self.elem = elem self.next = next_ 基本链表操作 创建空列表 删除链表 判断表是否为空 判断表是否满 加入元素 表首端插入： 123q = LNode(13)q.next = head.nexthead = q 一般情况的元素插入 创建新结点q并存入数据； 把pre所指结点next域的值存入新结点q的链接域next. 把pre结点的next域改为q123q = LNode(15)q.next = pre.nextpre.next = q 删除元素 删除表首元素：更改表头指针，将其指向下一个结点即可。 1head = head.next 一般情况的元素删除：一般情况要先找到pre结点，将其next域指向被删结点的下一结点即可。 1pre.next = pre.next.next 扫描、定位和遍历扫描已知信息只有表头，故而只能从表头开始往下扫描：1234p = headwhile p is not None and &lt;其他条件&gt;: &lt;对p进行操作&gt; p = p.next]]></content>
+      <categories>
+        <category>CS之路</category>
+      </categories>
+      <tags>
+        <tag>数据结构</tag>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[数据结构Pyhon（一）-抽象数据结构]]></title>
+    <url>%2F2018%2F09%2F23%2F%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84Pyhon%EF%BC%88%E4%B8%80%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[抽象数据类型的概念一个数据类型的操作通常可以分为三类： 构造操作：基于已知信息，产生同样类型的新对象； 解析操作：基于已知信息，产生不同类型的新对象； 变动操作：修改被操作对象的内部状态。 静态方法和类方法 静态方法：通过在类前添加修饰符@staticmethod实现，本质上为普通函数。它没有self参数； 类方法：以访问属性的形式调用，调用它的类将自动约束到方法的cls参数。可通过该参数方位该类的其他属性。 在编程过程中，__init__方法通常都用来检查参数的合法性，设置参数的数据属性。]]></content>
+      <categories>
+        <category>CS之路</category>
+      </categories>
+      <tags>
+        <tag>数据结构</tag>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[JAVA笔记（五）-类和对象]]></title>
+    <url>%2F2018%2F09%2F12%2FJAVA%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%94%EF%BC%89-%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1%2F</url>
+    <content type="text"><![CDATA[《JAVA程序设计教程》笔记（五）——CHAP6 类和对象 重点： 类的构造方法 类类的声明类体类体中包含变量的声明以及类方法的定义。 类的构造方法 构造方法的名称和类名相同 没有返回类型，返回值，也不需要修饰符 虽然看起来和一般的成员方法没有区别，但不能被直接调用，只能被new运算符调用 构造方法不能被继承（因为它不是类的成员） 子类可以调用父类的构造方法 【举个栗子】 创建一个car类并调用。1234567891011121314151617181920212223242526class Car&#123; private String Brand; int gas; Car (String vBrand, int vgas )&#123; //构造方法 Brand = vBrand; gas = vgas; &#125; void run()&#123; if (gas &gt; 0) gas -=10; else System.out.println("没油了，不能跑啦~"); &#125; void Disp()&#123; System.out.println("品牌："+Brand+"油量"+gas); &#125;&#125;class Example6_1&#123; public static void main(String args[])&#123; Car MyCar = new Car("Audi", 10); //创建对象mycar MyCar.Disp(); //调用disp方法 MyCar.run(); //调用run方法 System.out.println("car is running……"); MyCar.run(); &#125;&#125; 成员变量]]></content>
+      <categories>
+        <category>CS之路</category>
+      </categories>
+      <tags>
+        <tag>JAVA</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[JAVA笔记（四）-数组]]></title>
+    <url>%2F2018%2F09%2F12%2FJAVA%E7%AC%94%E8%AE%B0%EF%BC%88%E5%9B%9B%EF%BC%89-%E6%95%B0%E7%BB%84%2F</url>
+    <content type="text"><![CDATA[《JAVA程序设计教程》笔记（四）——CHAP5 数组 重点： java的高维数组每一个维数可以不一致 冒泡排序法 数组是用相同类型的元素组成的集合。这些元素可以是基本数据类型，也可以是构造出的数据类型。 包含以下几个部分： 数组名 数组类型 数组长度（有几个元素？） 数组中的元素是有顺序的。 一维数组声明：int a[];或者int [] a;均可。 初始化： 直接在声明时初始化：int a[] = {1,2,3};，可用于元素较少的时候。但是不能先声明再使用静态的初始化: 12int a[];a = &#123;1,2,3&#125;//会报错! 为数组分配内存空间，后续再赋值 12类型 数组名[];数组名 = new 类型[数组长度]； 例如： 12345int a = new int[4];a[0] = 1;a[1] = 2;a[2] = 3;a[3] = 4; 【举个栗子】 实现冒泡升序排列12345678910111213141516171819public class BubbleSort&#123; public static void main(String args[]) &#123; int i,j; int intArray[] = &#123;35,22,51,10,60&#125;; int len = intArray.length; for (i = 1; i &lt; len; i++) for (j = 0; j &lt; len - i - 1; j ++) if (intArray[j] &gt; intArray[j+1]) &#123; int t = intArray[j]; intArray[j] = intArray[j + 1]; intArray[j + 1] = t; &#125; System.out.println("the result after bubblesort: "); for (i = 0; i &lt; len - 1; i ++) System.out.println(intArray[i]); &#125; &#125; 把数组传递给方法多维数组二维数组的声明&amp;创建声明：12int a[][];double [][] b; 分配内存空间 直接为每一维分配空间：int a = new int[2][3];创建一个2*3维的数组； 从最高维开始分配：123int b = new int [2][];b[0] = new int[3];b[1] = new int[5]; 得到的形式如下： b[0][0] b[0][1] b[0][2] b[1][0] b[1][1] b[1][2] b[1][3] b[1][4] 注意 java数组的每一维不需要等长。 使用new分配内存时，至少需要给出最高维的大小。]]></content>
+      <categories>
+        <category>CS之路</category>
+      </categories>
+      <tags>
+        <tag>JAVA</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[JAVA笔记（三）-程序流控制结构和方法]]></title>
+    <url>%2F2018%2F09%2F11%2FJAVA%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%89%EF%BC%89-%E7%A8%8B%E5%BA%8F%E6%B5%81%E6%8E%A7%E5%88%B6%E7%BB%93%E6%9E%84%E5%92%8C%E6%96%B9%E6%B3%95%2F</url>
+    <content type="text"><![CDATA[《JAVA程序设计教程》笔记（三）——CHAP4 程序流控制结构和方法 重点： if elif条件嵌套 多选择结构switch+case 带标号的continue&amp;break 递归算法 switch语句【举个栗子】switch + 三目条件运算（见笔记（一））本例可以把输入的字符串转换成数字：以及在Java中，用双引号””括起来的为String,用单引号’’括起来的是Char12345678910111213141516171819202122232425262728293031import java.io.*;class SwitchTest2&#123; public static void main(String args[]) throws IOException &#123; char ch; System.out.print("enter a month: "); //这里是因为没有办法输入10,11,12这种两个字符的字节,故而用a,b,c代替 ch = (char)System.in.read(); &#123; System.in.skip(2); switch( (ch == '1'||ch == '2'||ch == 'c')?1: (ch == '3'||ch == '4'||ch == '5')?2: (ch == '6'||ch == '7'||ch == '8')?3: (ch == '9'||ch == 'a'||ch == 'b')?4:5) &#123; case 1: System.out.println("春季"); break; case 2: System.out.println("夏季"); break; case 3: System.out.println("秋季"); break; case 4: System.out.println("冬季"); break; default:System.out.println(ch + "是无效月份！"); &#125; System.out.print("switch语句出口！"); &#125; &#125;&#125; 结构化编程for 循环for(初值表达式1;循环条件表达式2;循环变量修改表达式3) 注定一定要确定循环条件，以防陷入死循环。 【举个栗子】计算1-100整数之和123456789class LoopTest3&#123; public static void main(String args[])&#123; System.out.println("0-100 个整数之和 ：\n"); int i, sum = 0; for(i = 1; i &lt;= 100; i++) sum += i; System.out.println("sum=" + sum + ",i =" + i ); &#125;&#125; 另外，如果i是循环for里面定义的，则只在循环内有效。 【补充】用for循环实现和while一样的结构 123456int x = 10;for (;;;)&#123; if ( x &gt; 0) break; x -- ;&#125; 这时则需要和break结合。 嵌套循环和continue和break带标识的continue添加一个合法的JAVA标识符，并在其后面跟上冒号。【举个栗子】1234567891011121314151617181920import javax.swig.JOptionPane;public class ContinueLabTest&#123; public static void main(String args[]) &#123; String output = ""; rownext：//添加标识符 for (int row = 1; row &lt;= 5; row ++) &#123; output += "\n"; for(int column = 1; column &lt;= 10; column ++) &#123; if (column &gt; 2 * row - 1) continue rownext; //这里就是带标识的地方，跳出第二层for循环，回到外层的循环并判断循环条件。 output += "*"; &#125; &#125; JOptionPane.showMessageDialog(null, output, "testing continue with a label", JOptionPane.INFORMATION_MESSAGE); System.exit(0); &#125;&#125; break语句 break语句除了放在循环里，还能放在switch里。 break也可以带标号，常用在跳出多重循环里，只要在想跳出的循环前面加上break标号。 算法设计这里先看一个基础的：递归【举个栗子】用递归方法求阶乘LoopDGc123456789101112131415class factor&#123; public long factorial(long n)&#123; if (n == 1) return 1 else return n * factor(n-1) &#125;&#125; public class LoopDGc &#123; public static void main (String args[]) &#123; long n = 20l; factor a = new factor(); long result = a.factorial(n); System.out.println(" "+n+" 的阶乘为" + result); &#125;&#125; 实际上这个地方还没怎么明白，尤其是主类和普通类。 首要还是要明白递归是什么东西……]]></content>
+      <categories>
+        <category>CS之路</category>
+      </categories>
+      <tags>
+        <tag>JAVA</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[JAVA笔记（二）-输入和输出]]></title>
+    <url>%2F2018%2F09%2F11%2FJAVA%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89-%E8%BE%93%E5%85%A5%E5%92%8C%E8%BE%93%E5%87%BA%2F</url>
+    <content type="text"><![CDATA[《JAVA程序设计教程》笔记（二）——CHAP3 Java的输入和输出 重点： System.out.write() 流式交互(InputStreamReader + BufferedReader) 标准输入/输出方法Java里System包提供输入/输出流。 输出方法 println()输出后换行； print()输出后不换行； write()则被用来输出字节数组 以下举例： void println(char[] X)输出一个字符数组 void write(int b [])输出字节数组中的某一个元素，其后不换行。 123456789class PrintDemo&#123; public static void main(Strng args[])&#123; byte b[] = &#123;'f','g','h','i'&#125;; System.out.write(b,0,2); System.out.println(); //因为write后不换行，所以这里用println换行 System.out.write(b[0]); &#125;&#125; 输出结果是：fg和f 标准输入方法用System.in.read()方法，有以下三种格式：123public abstract in read() //从键盘输入一个字符public int read(byte[] b) //一次输入多个字节，并存在字节数组b中public int read (byte[] b, int off, int len)//限定输入的字节 另外，因为键盘输入很容易出错，所以必须引入异常处理机制。引入格式有两种 在main方法后直接用throws java.io.IOException子句抛出异常； 先在程序开头import java.io.*;加载语句,接着在main方法后加上throws IOExcrption子句来跑出异常。 【举个栗子】在键盘上一次输入多个字符并显示：12345678910public class ReadCharDemo&#123; public static void main(String args[]) throws java.io.IOException &#123; byte b[] = new byte[16]; //定义长度为16的数组 System.out.println("\n 从键盘输出不超过16个字符，按回车键结束") System.in.read(b); System.out.printlb("\n 从键盘输入的是：") System.out.write(b,0,16);//用write直接输出字节数组。 &#125;&#125; 注意 如果用的是print方法，则需要把每一个元素都转化成字符，比较麻烦。 使用read方法时，还可以用read(b, 0, 10)来限制读入长度。（见上面提到的方法3） 利用命令行传入参数123456public class HelloArgs&#123; public static void main(String args[]) &#123; System.out.println(args[0] + args[1] + "Hello!"); &#125;&#125; 接着可以在命令行里直接传递参数： 12E:\code\java-learning&gt; java HelloArgs 王可 王小可王可王小可Hello! 流式交互1234567891011import java.io.*;public class HelloA1&#123; public static void main(String [] args) throws IOException &#123; InputStreamReader reader = new InputStreamReader(System.in); BufferedReader input = new BufferedReader(reader); System.out.print("Enter your name:"); String name = input.readLine(); System.out.println("Hello," + name + "!"); &#125; 这里reader作为InputStreamReader的一个实例存在，并且用作输入的System.in对象与之绑定； 接下在input作为BufferedReader的一个实例，与reader绑定； 用input的readLine方法来从键盘读取一整行的文字即可。 图形界面&amp;自定义类以后再填坑，目前用不上，跳过。]]></content>
+      <categories>
+        <category>CS之路</category>
+      </categories>
+      <tags>
+        <tag>JAVA</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[MarkDown必要语法补充]]></title>
+    <url>%2F2018%2F09%2F11%2FMarkDown%E5%BF%85%E8%A6%81%E8%AF%AD%E6%B3%95%E8%A1%A5%E5%85%85%2F</url>
+    <content type="text"><![CDATA[编号：使用数字+.+半角空格 代码块高亮]]></content>
+      <categories>
+        <category>日常瞎玩</category>
+      </categories>
+      <tags>
+        <tag>MarkDown</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[JAVA笔记（一）-语言基础]]></title>
+    <url>%2F2018%2F09%2F11%2FJAVA%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89-%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80%2F</url>
+    <content type="text"><![CDATA[《JAVA程序设计教程》笔记（一）——CHAP2 JAVA语言基础 重点：最终变量、三元条件运算、位运算、MATH类 TIPS注释格式 //表示单行注释 多行注释以/*开始，*/结尾 编程习惯 所有语句以分号结尾； Java区分大小写； 类名称以大写字母开头，变量以小写字母开头； 驼峰命名法； 文件名需要和public类在拼写和大小写上一致； JAVA语言基础基本构成标识符所有标识符必须以A~Za~z，_或者$开头；（尤其注意不能以数字开头）； 流行的命名方式 常值标识符——全部大写： RED 类名标识符——大写字母开头+驼峰：MyCar 公有方法/实例变量——小写开头+驼峰：getCurrentValue 关键字 for while boolean ……分隔符 注释 空白符（回车、TAB、换行），会被忽略 普通分隔符（{} ; , :）直接量 运算符数据类型基本数据类型 整型：byte, short, int, long; 浮点型：float, double, 字符型：char 布尔型：boolean直接量程序中使用的常量整数、浮点数、布尔值、字符、字符串变量一般变量要经历以下几个步骤 声明变量 变量的作用域和生命周期 最终变量 这个概念第一次听说。高亮~ 它指的是在运行过程中值不变的量，有点类似于常量。 定义的方法有两种。 直接定义： final double PI = 3.1415； 在声明的变量前加关键字，必要时再初始化： 123final double PI;……PI = 3.14159； 变量类型的转换 自动转换：两个类型兼容/目标类型大于原类型（比如byte转double) 强制转换 运算符&amp;表达式 只有一点要注意： 1234int i = 10;int j = 10;x = i ++;y = ++ j; x的值为10， y的值为11。所以++的位置要注意 逻辑运算符： !逻辑非 &amp;&amp;逻辑和 ||逻辑或 三元条件运算符exp1&gt;exp2:exp3 例如： 12x = 10;y = x &gt; 9 ? 100:200 输出y为100，否则y为200 MATH类的操作Math在JAVA.lang类包里。 调用e和PI:Math.E Math.PI 最大最小化：Math.max(val,val) Math.min(val,val) 绝对值: Math.abs() 四舍五入： Math.round() Math.rint() Math.ceil() Math.floor() 幂和对数:exp(),pow(),log() 三角函数：Math.sin()等]]></content>
+      <categories>
+        <category>CS之路</category>
+      </categories>
+      <tags>
+        <tag>JAVA</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[java10的环境配置]]></title>
+    <url>%2F2018%2F09%2F10%2Fjava10%E7%9A%84%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%2F</url>
+    <content type="text"><![CDATA[好久没碰JAVA，今天重新下了个JDK10，发现配置较之前学习的有所变化。主要是PATH和JRE的环境配置： CLASSPATH配置 首先在环境变量中添加JAVA_HOME为jdk的安装路径； 新建一个CLASSPATH的系统变量，并添加.;%JAVA_HOME%\lib;%JAVA_HOME%\lib\tools.jar 注意前面不要忘记加点和分号。 PATH配置直接用绝对路径，添加&lt;PATH_TO_JDK\bin&gt; （并不需要把jre也加进去） 验证安装是否成功老三样，打开cmd，依次输入：123java -versionjavacjava 都成功就说明装完啦~]]></content>
+      <categories>
+        <category>CS之路</category>
+      </categories>
+      <tags>
+        <tag>JAVA</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[hexo+github博客搭建]]></title>
+    <url>%2F2018%2F09%2F08%2Fhexo-github%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%2F</url>
+    <content type="text"><![CDATA[刚开学没事干，所以想着来搭个博客吧。也是为了激励自己能够养成及时总结的习惯。 hexo+github的博客搭建教程网络上很多，我主要搜了知乎的这一篇，讲得很详细：GitHub+Hexo 搭建个人网站详细教程此外这个作者的汇总做的也不错：Hexo+GithubPages&amp;CodingPages搭建自己的个人博客还有这个作者的汇总：我的个人博客之旅：从jekyll到hexo 设置多个tags以及categories在写这个blog的时候还发现，如果直接在tags后面写多个tags会显示成一个，这是不行的。这里提供了解决方法：hexo搭建博客–给文章添加多个tag或category注意这里的categories是直接显示的侧边栏。 以下是一些常用个性化设置： 修改文本链接样式：链接文本改为蓝色，鼠标划过时文字颜色加深：找到文件 themes\next\source\css_custom\custom.styl ，添加如下 css 样式：1234567.post-body p a &#123; color: #0593d3; border-bottom: none; &amp;:hover &#123; color: #0477ab; &#125;&#125; 在侧边栏添加tags：新建一个页面，命名为 tags：1hexo new page tags 这会在blog的根目录的source下生成一个tags文件夹，文件夹里面带了一个index.md点进去，修改：12345---title: tagsdate: 2018-09-08 15:23:35type: &quot;tags&quot;--- 注意不要忘记在冒号之后打半角空格 增加搜索框以下是网络上的方法，但是我尝试了一下没啥用= =首先安装hexo-generator-searchdb插件(在blog的根目录下)1npm install hexo-generator-searchdb --save 接着，找到站点配置的_config.yml文件，在任意位置添加：12345search: path: search.xml field: post format: html limit: 10000 以下是next主题配置自带的功能：在next的_config.yml文件夹下，找到“local_search”这一栏，把默认的false改为“auto”(自动匹配)或者”manual”(手动匹配)即可。1234567local_search: enable: auto # if auto, trigger search by changing input # if manual, trigger search by pressing enter key or search button trigger: auto # show top n results per article, show all results by setting to -1 top_n_per_article: 1 控制预览字数/博文缩略显示 在想要断页的地方添加：&lt;!--more--&gt;，可以精确控制字数； 或者在next的_config.yml文件中，找到auto_excerpt项，然后把底下的false改为true。这样可以控制每篇blog都显示相同的字数。]]></content>
+      <categories>
+        <category>日常瞎玩</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+</search>

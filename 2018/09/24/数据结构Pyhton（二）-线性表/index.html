@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="数据结构,python," />
 
 
 
@@ -79,17 +79,18 @@
 
 
 
-<meta name="description" content="写来自我陶醉的。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="tags">
-<meta property="og:url" content="http://yoursite.com/tags/index.html">
+<meta name="description" content="本章重点 线性表的定义 顺序表和链接表">
+<meta name="keywords" content="数据结构,python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据结构Pyhon（二）-线性表">
+<meta property="og:url" content="http://yoursite.com/2018/09/24/数据结构Pyhton（二）-线性表/index.html">
 <meta property="og:site_name" content="Kay Wang&#39;s Blog">
-<meta property="og:description" content="写来自我陶醉的。">
+<meta property="og:description" content="本章重点 线性表的定义 顺序表和链接表">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-22T15:39:30.654Z">
+<meta property="og:updated_time" content="2018-09-24T09:55:09.606Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="tags">
-<meta name="twitter:description" content="写来自我陶醉的。">
+<meta name="twitter:title" content="数据结构Pyhon（二）-线性表">
+<meta name="twitter:description" content="本章重点 线性表的定义 顺序表和链接表">
 
 
 
@@ -119,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/09/24/数据结构Pyhton（二）-线性表/"/>
 
 
 
 
 
-  <title>tags | Kay Wang's Blog</title>
+  <title>数据结构Pyhon（二）-线性表 | Kay Wang's Blog</title>
   
 
 
@@ -284,40 +285,257 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/24/数据结构Pyhton（二）-线性表/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Wang Ke">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Kay Wang's Blog">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">tags</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <div class="tag-cloud">
-            <div class="tag-cloud-title">
-                目前共计 6 个标签
-            </div>
-            <div class="tag-cloud-tags">
-              <a href="/tags/JAVA/" style="font-size: 30px; color: #111">JAVA</a> <a href="/tags/MarkDown/" style="font-size: 12px; color: #ccc">MarkDown</a> <a href="/tags/git/" style="font-size: 12px; color: #ccc">git</a> <a href="/tags/hexo/" style="font-size: 12px; color: #ccc">hexo</a> <a href="/tags/python/" style="font-size: 21px; color: #6f6f6f">python</a> <a href="/tags/数据结构/" style="font-size: 21px; color: #6f6f6f">数据结构</a>
-            </div>
-          </div>
+          <h1 class="post-title" itemprop="name headline">数据结构Pyhon（二）-线性表</h1>
         
-      </div>
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-24T09:03:28+08:00">
+                2018-09-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CS之路/" itemprop="url" rel="index">
+                    <span itemprop="name">CS之路</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <h1 id="本章重点"><a href="#本章重点" class="headerlink" title="本章重点"></a>本章重点</h1><ul>
+<li>线性表的定义</li>
+<li>顺序表和链接表</li>
+<li><a id="more"></a>
+<h1 id="线性表的概念和表抽象数据结构类型"><a href="#线性表的概念和表抽象数据结构类型" class="headerlink" title="线性表的概念和表抽象数据结构类型"></a>线性表的概念和表抽象数据结构类型</h1><h2 id="表的概念和性质"><a href="#表的概念和性质" class="headerlink" title="表的概念和性质"></a>表的概念和性质</h2>E中一组有穷个元素排成的序列。表中包含的元素的个数成为表的<strong>长度</strong>。元素之间的关系成为“下一个关系”，这是一种顺序关系，也称为线性关系，是一种线性结构。</li>
+</ul>
+<h2 id="线性表的操作"><a href="#线性表的操作" class="headerlink" title="线性表的操作"></a>线性表的操作</h2><p>一个线性表可以提供的操作有：</p>
+<ul>
+<li>创建线性表的操作；</li>
+<li>获取表中信息的解析操作（判断是否为空）</li>
+<li>动态改变表的内容；</li>
+<li>表的组合操作（merge，subset……）</li>
+<li>对表元素的遍历问题（给定对单个元素的操作，也存在可以对表进行的操作）</li>
+</ul>
+<p>最后的这两类可以实现变动操作（直接在原表基础上修改）或者非变动操作（在原表基础上产生新表）。</p>
+<h2 id="线性表的实现"><a href="#线性表的实现" class="headerlink" title="线性表的实现"></a>线性表的实现</h2><h3 id="基本考虑："><a href="#基本考虑：" class="headerlink" title="基本考虑："></a>基本考虑：</h3><ul>
+<li>考虑计算机内容的特点，还有保存元素和元素顺序信息的需要。</li>
+<li>各种重要操作的消耗。比如is_empty这种，消耗越小越好。</li>
+</ul>
+<h3 id="两种实现模型"><a href="#两种实现模型" class="headerlink" title="两种实现模型"></a>两种实现模型</h3><ul>
+<li>顺序表：表中元素顺序地存放在一大块连续的存储区里；</li>
+<li>链接表：通过连接构造起来的一系列存储块里。</li>
+</ul>
+<h3 id="基本实现方式"><a href="#基本实现方式" class="headerlink" title="基本实现方式"></a>基本实现方式</h3><h4 id="表里保存的元素类型相同。"><a href="#表里保存的元素类型相同。" class="headerlink" title="表里保存的元素类型相同。"></a>表里保存的元素类型相同。</h4><p>在顺序表中，可以通过Loc(ei)=Loc(e0)+c * i来计算出ei的位置。时间复杂度为O（1）。</p>
+<h4 id="元素类型（长度）不同"><a href="#元素类型（长度）不同" class="headerlink" title="元素类型（长度）不同"></a>元素类型（长度）不同</h4><p>这个时候可以考虑将实际元素另外存储，而在顺序表里各单位位置保存相应位置的引用信息（链接）。</p>
+<h1 id="顺序表"><a href="#顺序表" class="headerlink" title="顺序表"></a>顺序表</h1><p>基本操作的实现以及时间复杂度</p>
+<h3 id="创建和访问操作"><a href="#创建和访问操作" class="headerlink" title="创建和访问操作"></a>创建和访问操作</h3><ul>
+<li>简单判断（是否为空，大小）：O（1）</li>
+<li>访问指定下标为i的元素：O（1）</li>
+<li>遍历操作：给定一个i，然后每次+1（向下）或者-1（向上），时间复杂度为O（n）</li>
+<li>查找给定元素d（第一次出现）的位置：检索/查找。</li>
+</ul>
+<p>不改变结构的操作，有两种：直接访问，时间复杂度为O（1）；或者基于一个整型变量循环得到结果的，时间复杂度为O（n）</p>
+<h3 id="变动操作：加入元素"><a href="#变动操作：加入元素" class="headerlink" title="变动操作：加入元素"></a>变动操作：加入元素</h3><ul>
+<li>在尾端加入数据：O（1）</li>
+<li>在第i个位置加入元素：有两种情况<ul>
+<li>不需要保持原来的相对位置：把i的元素移动到位置num。时间复杂度：O（1）；</li>
+<li>要保证相对位置：和要移动的元素个数成正比，平均和最坏的情况都为O（n）。<h3 id="变动操作：删除元素"><a href="#变动操作：删除元素" class="headerlink" title="变动操作：删除元素"></a>变动操作：删除元素</h3></li>
+</ul>
+</li>
+<li>尾端删除：O（1）</li>
+<li>在第i个位置删除元素：也有两种情况<ul>
+<li>不需要保持原来的相对位置：把num-1的元素移动到位置i。时间复杂度：O（1）；</li>
+<li>要保证相对位置：和要移动的元素个数成正比，平均和最坏的情况都为O（n）。</li>
+</ul>
+</li>
+<li>基于条件的删除：因为需要对元素进行遍历，故而时间复杂度也为O（n）。</li>
+</ul>
+<h3 id="顺序表的结构"><a href="#顺序表的结构" class="headerlink" title="顺序表的结构"></a>顺序表的结构</h3><p>顺序表可以用两种储存结构：</p>
+<ul>
+<li>一体式结构：存储表信息的单元和元素存储区被安排在一块存储区里；</li>
+<li>分离式结构：存储表信息的单元和元素存储区不被安排在一起，通过一个连接实现相连。</li>
+</ul>
+<h4 id="分离式结构扩容"><a href="#分离式结构扩容" class="headerlink" title="分离式结构扩容"></a>分离式结构扩容</h4><h5 id="替换元素存储区："><a href="#替换元素存储区：" class="headerlink" title="替换元素存储区："></a>替换元素存储区：</h5><p>分离式结构的优势，可以在标识不变的情况下，为表对象换一块存储区。（可以改变表的容量）。</p>
+<h5 id="替换策略：容量加倍"><a href="#替换策略：容量加倍" class="headerlink" title="替换策略：容量加倍"></a>替换策略：容量加倍</h5><p>每次更换存储区的时候，加倍容量:1,2,4,……。</p>
+<p>这样算下来,总元素为n个时，时间复杂度为O（n），平均每个元素的时间复杂度为O（1）。</p>
+<h1 id="链接表"><a href="#链接表" class="headerlink" title="链接表"></a>链接表</h1><h2 id="基本思想"><a href="#基本思想" class="headerlink" title="基本思想"></a>基本思想</h2><ul>
+<li>表中的元素独立存储；</li>
+<li>组成表结构的任一结点可以找到与其相关的下一结点；</li>
+<li>前一节点中，用链接的方式显式地记录与下一结点之间的关联。</li>
+</ul>
+<h3 id="单链表"><a href="#单链表" class="headerlink" title="单链表"></a>单链表</h3><p>结点为二元组，表元素域中保存折作为表元素的数据项以及同一个表里下一个结点的标识。以下定义一个结点类<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">LNode</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self,elem, next_ = None)</span>:</span></span><br><span class="line">        self.elem = elem</span><br><span class="line">        self.next = next_</span><br></pre></td></tr></table></figure></p>
+<h4 id="基本链表操作"><a href="#基本链表操作" class="headerlink" title="基本链表操作"></a>基本链表操作</h4><ul>
+<li>创建空列表</li>
+<li>删除链表</li>
+<li>判断表是否为空</li>
+<li>判断表是否满</li>
+</ul>
+<h4 id="加入元素"><a href="#加入元素" class="headerlink" title="加入元素"></a>加入元素</h4><ul>
+<li><p>表首端插入：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">q = LNode(<span class="number">13</span>)</span><br><span class="line">q.next = head.next</span><br><span class="line">head = q</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>一般情况的元素插入</p>
+<ol>
+<li>创建新结点q并存入数据；</li>
+<li>把pre所指结点next域的值存入新结点q的链接域next.</li>
+<li>把pre结点的next域改为q<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">q = LNode(<span class="number">15</span>)</span><br><span class="line">q.next = pre.next</span><br><span class="line">pre.next = q</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+</ul>
+<h4 id="删除元素"><a href="#删除元素" class="headerlink" title="删除元素"></a>删除元素</h4><ul>
+<li><p>删除表首元素：更改表头指针，将其指向下一个结点即可。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">head = head.next</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>一般情况的元素删除：一般情况要先找到pre结点，将其next域指向被删结点的下一结点即可。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pre.next = pre.next.next</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="扫描、定位和遍历"><a href="#扫描、定位和遍历" class="headerlink" title="扫描、定位和遍历"></a>扫描、定位和遍历</h4><h5 id="扫描"><a href="#扫描" class="headerlink" title="扫描"></a>扫描</h5><p>已知信息只有表头，故而只能从表头开始往下扫描：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">p = head</span><br><span class="line"><span class="keyword">while</span> p <span class="keyword">is</span> <span class="keyword">not</span> <span class="keyword">None</span> <span class="keyword">and</span> &lt;其他条件&gt;:</span><br><span class="line">    &lt;对p进行操作&gt;</span><br><span class="line">    p = p.next</span><br></pre></td></tr></table></figure></p>
+
       
     </div>
     
     
     
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/数据结构/" rel="tag"># 数据结构</a>
+          
+            <a href="/tags/python/" rel="tag"># python</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/09/23/数据结构Pyhon（一）/" rel="next" title="数据结构Pyhon（一）-抽象数据结构">
+                <i class="fa fa-chevron-left"></i> 数据结构Pyhon（一）-抽象数据结构
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -350,8 +568,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -411,6 +638,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#本章重点"><span class="nav-number">1.</span> <span class="nav-text">本章重点</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#线性表的概念和表抽象数据结构类型"><span class="nav-number">2.</span> <span class="nav-text">线性表的概念和表抽象数据结构类型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#表的概念和性质"><span class="nav-number">2.1.</span> <span class="nav-text">表的概念和性质</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#线性表的操作"><span class="nav-number">2.2.</span> <span class="nav-text">线性表的操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#线性表的实现"><span class="nav-number">2.3.</span> <span class="nav-text">线性表的实现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本考虑："><span class="nav-number">2.3.1.</span> <span class="nav-text">基本考虑：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#两种实现模型"><span class="nav-number">2.3.2.</span> <span class="nav-text">两种实现模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基本实现方式"><span class="nav-number">2.3.3.</span> <span class="nav-text">基本实现方式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#表里保存的元素类型相同。"><span class="nav-number">2.3.3.1.</span> <span class="nav-text">表里保存的元素类型相同。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#元素类型（长度）不同"><span class="nav-number">2.3.3.2.</span> <span class="nav-text">元素类型（长度）不同</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#顺序表"><span class="nav-number">3.</span> <span class="nav-text">顺序表</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建和访问操作"><span class="nav-number">3.0.1.</span> <span class="nav-text">创建和访问操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#变动操作：加入元素"><span class="nav-number">3.0.2.</span> <span class="nav-text">变动操作：加入元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#变动操作：删除元素"><span class="nav-number">3.0.3.</span> <span class="nav-text">变动操作：删除元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#顺序表的结构"><span class="nav-number">3.0.4.</span> <span class="nav-text">顺序表的结构</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#分离式结构扩容"><span class="nav-number">3.0.4.1.</span> <span class="nav-text">分离式结构扩容</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#替换元素存储区："><span class="nav-number">3.0.4.1.1.</span> <span class="nav-text">替换元素存储区：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#替换策略：容量加倍"><span class="nav-number">3.0.4.1.2.</span> <span class="nav-text">替换策略：容量加倍</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#链接表"><span class="nav-number">4.</span> <span class="nav-text">链接表</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本思想"><span class="nav-number">4.1.</span> <span class="nav-text">基本思想</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#单链表"><span class="nav-number">4.1.1.</span> <span class="nav-text">单链表</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#基本链表操作"><span class="nav-number">4.1.1.1.</span> <span class="nav-text">基本链表操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#加入元素"><span class="nav-number">4.1.1.2.</span> <span class="nav-text">加入元素</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#删除元素"><span class="nav-number">4.1.1.3.</span> <span class="nav-text">删除元素</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#扫描、定位和遍历"><span class="nav-number">4.1.1.4.</span> <span class="nav-text">扫描、定位和遍历</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#扫描"><span class="nav-number">4.1.1.4.1.</span> <span class="nav-text">扫描</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
