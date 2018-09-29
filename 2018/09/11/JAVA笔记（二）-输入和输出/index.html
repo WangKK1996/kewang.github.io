@@ -7,7 +7,7 @@
 
 <html class="theme-next gemini use-motion" lang="zh-Hans">
 <head>
-  <meta charset="UTF-8"/>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="#222">
@@ -42,6 +42,32 @@
   
   <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
 
 
 
@@ -126,7 +152,7 @@
 
 
 
-  <title>JAVA笔记（二）-输入和输出 | Kay Wang's Blog</title>
+  <title>JAVA笔记（二）-输入和输出 | Kay Wang's Blog</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 
@@ -145,7 +171,7 @@
     
   
 
-  <div class="container sidebar-position-left page-post-detail">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -272,8 +298,7 @@
   
 </nav>
 
-
-
+<link href="https://cdn.bootcss.com/KaTeX/0.7.1/katex.min.css" rel="stylesheet">
  </div>
     </header>
 
@@ -302,7 +327,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Wang Ke">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -393,40 +418,51 @@
 <li>流式交互(InputStreamReader + BufferedReader)</li>
 </ul>
 <a id="more"></a>
-<h2 id="标准输入-输出方法"><a href="#标准输入-输出方法" class="headerlink" title="标准输入/输出方法"></a>标准输入/输出方法</h2><p>Java里System包提供输入/输出流。</p>
-<h3 id="输出方法"><a href="#输出方法" class="headerlink" title="输出方法"></a>输出方法</h3><ul>
+<h2 id="标准输入输出方法"><a class="markdownIt-Anchor" href="#标准输入输出方法"></a> 标准输入/输出方法</h2>
+<p>Java里System包提供输入/输出流。</p>
+<h3 id="输出方法"><a class="markdownIt-Anchor" href="#输出方法"></a> 输出方法</h3>
+<ul>
 <li><code>println()</code>输出后换行；</li>
 <li><code>print()</code>输出后不换行；</li>
 <li><code>write()</code>则被用来输出字节数组</li>
 </ul>
 <p>以下举例：</p>
 <ul>
-<li><code>void println(char[] X)</code>输出一个字符数组</li>
-<li><p><code>void write(int b [])</code>输出字节数组中的某一个元素，其后不换行。</p>
+<li>
+<p><code>void println(char[] X)</code>输出一个字符数组</p>
+</li>
+<li>
+<p><code>void write(int b [])</code>输出字节数组中的某一个元素，其后不换行。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">PrintDemo</span></span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(Strng args[])</span></span>&#123;</span><br><span class="line">      <span class="keyword">byte</span> b[]  = &#123;<span class="string">'f'</span>,<span class="string">'g'</span>,<span class="string">'h'</span>,<span class="string">'i'</span>&#125;;</span><br><span class="line">      </span><br><span class="line">      System.out.write(b,<span class="number">0</span>,<span class="number">2</span>);</span><br><span class="line">      System.out.println(); <span class="comment">//因为write后不换行，所以这里用println换行</span></span><br><span class="line">      System.out.write(b[<span class="number">0</span>]);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>输出结果是：<code>fg</code>和<code>f</code></p>
 </li>
 </ul>
-<h1 id="标准输入方法"><a href="#标准输入方法" class="headerlink" title="标准输入方法"></a>标准输入方法</h1><p>用<code>System.in.read()</code>方法，有以下三种格式：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public abstract in read() //从键盘输入一个字符</span><br><span class="line">public int read(byte[] b) //一次输入多个字节，并存在字节数组b中</span><br><span class="line">public int read (byte[] b, int off, int len)//限定输入的字节</span><br></pre></td></tr></table></figure></p>
+<h1 id="标准输入方法"><a class="markdownIt-Anchor" href="#标准输入方法"></a> 标准输入方法</h1>
+<p>用<code>System.in.read()</code>方法，有以下三种格式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public abstract in read() //从键盘输入一个字符</span><br><span class="line">public int read(byte[] b) //一次输入多个字节，并存在字节数组b中</span><br><span class="line">public int read (byte[] b, int off, int len)//限定输入的字节</span><br></pre></td></tr></table></figure>
 <p>另外，因为键盘输入很容易出错，所以必须引入<strong>异常处理</strong>机制。引入格式有两种</p>
 <ol>
 <li>在main方法后直接用<code>throws java.io.IOException</code>子句抛出异常；</li>
 <li>先在程序开头<code>import java.io.*;</code>加载语句,接着在main方法后加上<code>throws IOExcrption</code>子句来跑出异常。</li>
 </ol>
-<p>【举个栗子】在键盘上一次输入多个字符并显示：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ReadCharDemo</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> <span class="keyword">throws</span> java.io.IOException</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">byte</span> b[] = <span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">16</span>]; <span class="comment">//定义长度为16的数组</span></span><br><span class="line">        System.out.println(<span class="string">"\n 从键盘输出不超过16个字符，按回车键结束"</span>)</span><br><span class="line">        System.in.read(b);</span><br><span class="line">        System.out.printlb(<span class="string">"\n 从键盘输入的是："</span>)</span><br><span class="line">        System.out.write(b,<span class="number">0</span>,<span class="number">16</span>);<span class="comment">//用write直接输出字节数组。</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>【举个栗子】在键盘上一次输入多个字符并显示：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ReadCharDemo</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> <span class="keyword">throws</span> java.io.IOException</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">byte</span> b[] = <span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">16</span>]; <span class="comment">//定义长度为16的数组</span></span><br><span class="line">        System.out.println(<span class="string">"\n 从键盘输出不超过16个字符，按回车键结束"</span>)</span><br><span class="line">        System.in.read(b);</span><br><span class="line">        System.out.printlb(<span class="string">"\n 从键盘输入的是："</span>)</span><br><span class="line">        System.out.write(b,<span class="number">0</span>,<span class="number">16</span>);<span class="comment">//用write直接输出字节数组。</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><strong>注意</strong></p>
 <ul>
 <li>如果用的是print方法，则需要把每一个元素都转化成字符，比较麻烦。</li>
 <li>使用read方法时，还可以用read(b, 0, 10)来限制读入长度。（见上面提到的方法3）</li>
 </ul>
-<h2 id="利用命令行传入参数"><a href="#利用命令行传入参数" class="headerlink" title="利用命令行传入参数"></a>利用命令行传入参数</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloArgs</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        System.out.println(args[<span class="number">0</span>] + args[<span class="number">1</span>] + <span class="string">"Hello!"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="利用命令行传入参数"><a class="markdownIt-Anchor" href="#利用命令行传入参数"></a> 利用命令行传入参数</h2>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloArgs</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        System.out.println(args[<span class="number">0</span>] + args[<span class="number">1</span>] + <span class="string">"Hello!"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>接着可以在命令行里直接传递参数：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">E:\code\java-learning&gt; java HelloArgs 王可 王小可</span><br><span class="line">王可王小可Hello!</span><br></pre></td></tr></table></figure>
-<h1 id="流式交互"><a href="#流式交互" class="headerlink" title="流式交互"></a>流式交互</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.*;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloA1</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String [] args)</span> <span class="keyword">throws</span> IOException</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        InputStreamReader reader = <span class="keyword">new</span> InputStreamReader(System.in);</span><br><span class="line">        BufferedReader input = <span class="keyword">new</span> BufferedReader(reader);</span><br><span class="line">        System.out.print(<span class="string">"Enter your name:"</span>);</span><br><span class="line">        String name = input.readLine();</span><br><span class="line">        System.out.println(<span class="string">"Hello,"</span> + name + <span class="string">"!"</span>);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h1 id="流式交互"><a class="markdownIt-Anchor" href="#流式交互"></a> 流式交互</h1>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.*;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloA1</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String [] args)</span> <span class="keyword">throws</span> IOException</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        InputStreamReader reader = <span class="keyword">new</span> InputStreamReader(System.in);</span><br><span class="line">        BufferedReader input = <span class="keyword">new</span> BufferedReader(reader);</span><br><span class="line">        System.out.print(<span class="string">"Enter your name:"</span>);</span><br><span class="line">        String name = input.readLine();</span><br><span class="line">        System.out.println(<span class="string">"Hello,"</span> + name + <span class="string">"!"</span>);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 <p>这里reader作为InputStreamReader的一个实例存在，并且用作输入的System.in对象与之绑定；</p>
 <p>接下在input作为BufferedReader的一个实例，与reader绑定；</p>
 <p>用input的readLine方法来从键盘读取一整行的文字即可。</p>
-<h1 id="图形界面-amp-自定义类"><a href="#图形界面-amp-自定义类" class="headerlink" title="图形界面&amp;自定义类"></a>图形界面&amp;自定义类</h1><p>以后再填坑，目前用不上，跳过。 </p>
+<h1 id="图形界面自定义类"><a class="markdownIt-Anchor" href="#图形界面自定义类"></a> 图形界面&amp;自定义类</h1>
+<p>以后再填坑，目前用不上，跳过。</p>
 
       
     </div>
@@ -535,6 +571,10 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="Wang Ke" />
+            
               <p class="site-author-name" itemprop="name">Wang Ke</p>
               <p class="site-description motion-element" itemprop="description">写来自我陶醉的。</p>
           </div>
@@ -546,7 +586,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -568,7 +608,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -578,6 +618,16 @@
 
           
 
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/wangkk1996" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+            </div>
           
 
           
@@ -601,7 +651,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#标准输入-输出方法"><span class="nav-number">1.</span> <span class="nav-text">标准输入/输出方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#输出方法"><span class="nav-number">1.1.</span> <span class="nav-text">输出方法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#标准输入方法"><span class="nav-number"></span> <span class="nav-text">标准输入方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#利用命令行传入参数"><span class="nav-number">1.</span> <span class="nav-text">利用命令行传入参数</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#流式交互"><span class="nav-number"></span> <span class="nav-text">流式交互</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#图形界面-amp-自定义类"><span class="nav-number"></span> <span class="nav-text">图形界面&amp;自定义类</span></a></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#标准输入输出方法"><span class="nav-number">1.</span> <span class="nav-text"> 标准输入/输出方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#输出方法"><span class="nav-number">1.1.</span> <span class="nav-text"> 输出方法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#标准输入方法"><span class="nav-number"></span> <span class="nav-text"> 标准输入方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#利用命令行传入参数"><span class="nav-number">1.</span> <span class="nav-text"> 利用命令行传入参数</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#流式交互"><span class="nav-number"></span> <span class="nav-text"> 流式交互</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#图形界面自定义类"><span class="nav-number"></span> <span class="nav-text"> 图形界面&amp;自定义类</span></a></div>
             
 
           </div>
@@ -688,7 +738,13 @@
 
 
 
+  
+  
 
+
+
+  
+  
 
 
 
@@ -724,6 +780,21 @@
   
   
     <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three-waves.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/canvas_lines.min.js"></script>
   
 
 
@@ -1109,7 +1180,7 @@
         onPopupClose();
       }
     });
-  </script>
+  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 
 

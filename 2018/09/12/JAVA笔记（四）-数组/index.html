@@ -7,7 +7,7 @@
 
 <html class="theme-next gemini use-motion" lang="zh-Hans">
 <head>
-  <meta charset="UTF-8"/>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="#222">
@@ -42,6 +42,32 @@
   
   <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
 
 
 
@@ -126,7 +152,7 @@
 
 
 
-  <title>JAVA笔记（四）-数组 | Kay Wang's Blog</title>
+  <title>JAVA笔记（四）-数组 | Kay Wang's Blog</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 
@@ -145,7 +171,7 @@
     
   
 
-  <div class="container sidebar-position-left page-post-detail">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -272,8 +298,7 @@
   
 </nav>
 
-
-
+<link href="https://cdn.bootcss.com/KaTeX/0.7.1/katex.min.css" rel="stylesheet">
  </div>
     </header>
 
@@ -302,7 +327,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Wang Ke">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -390,9 +415,10 @@
 <p><strong>重点</strong>：</p>
 <ul>
 <li>java的高维数组每一个维数可以不一致</li>
-<li>冒泡排序法    <a id="more"></a>
-数组是用<strong>相同类型的元素</strong>组成的集合。这些元素可以是基本数据类型，也可以是构造出的数据类型。</li>
+<li>冒泡排序法</li>
 </ul>
+<a id="more"></a>
+<p>数组是用<strong>相同类型的元素</strong>组成的集合。这些元素可以是基本数据类型，也可以是构造出的数据类型。</p>
 <p>包含以下几个部分：</p>
 <ul>
 <li>数组名</li>
@@ -400,22 +426,33 @@
 <li>数组长度（有几个元素？）</li>
 </ul>
 <p>数组中的元素是有顺序的。</p>
-<h2 id="一维数组"><a href="#一维数组" class="headerlink" title="一维数组"></a>一维数组</h2><h3 id="声明："><a href="#声明：" class="headerlink" title="声明："></a>声明：</h3><p><code>int a[];</code>或者<code>int [] a;</code>均可。</p>
-<h3 id="初始化："><a href="#初始化：" class="headerlink" title="初始化："></a>初始化：</h3><ol>
-<li><p>直接在声明时初始化：<code>int a[] = {1,2,3};</code>，可用于<strong>元素较少</strong>的时候。<br>但是不能先声明再使用静态的初始化:</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a[];</span><br><span class="line">a = &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>&#125;<span class="comment">//会报错!</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>为数组分配内存空间，后续再赋值</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">类型 数组名[];</span><br><span class="line">数组名 = <span class="keyword">new</span> 类型[数组长度]；</span><br></pre></td></tr></table></figure>
-<p> 例如：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">4</span>];</span><br><span class="line">a[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">a[<span class="number">1</span>] = <span class="number">2</span>;</span><br><span class="line">a[<span class="number">2</span>] = <span class="number">3</span>;</span><br><span class="line">a[<span class="number">3</span>] = <span class="number">4</span>;</span><br></pre></td></tr></table></figure>
-</li>
+<h2 id="一维数组"><a class="markdownIt-Anchor" href="#一维数组"></a> 一维数组</h2>
+<h3 id="声明"><a class="markdownIt-Anchor" href="#声明"></a> 声明：</h3>
+<p><code>int a[];</code>或者<code>int [] a;</code>均可。</p>
+<h3 id="初始化"><a class="markdownIt-Anchor" href="#初始化"></a> 初始化：</h3>
+<ol>
+<li>直接在声明时初始化：<code>int a[] = {1,2,3};</code>，可用于<strong>元素较少</strong>的时候。<br>
+但是不能先声明再使用静态的初始化:</li>
 </ol>
-<p><strong>【举个栗子】</strong> 实现冒泡升序排列<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BubbleSort</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> i,j;</span><br><span class="line">        <span class="keyword">int</span> intArray[] = &#123;<span class="number">35</span>,<span class="number">22</span>,<span class="number">51</span>,<span class="number">10</span>,<span class="number">60</span>&#125;;</span><br><span class="line">        <span class="keyword">int</span> len = intArray.length;</span><br><span class="line">        <span class="keyword">for</span> (i = <span class="number">1</span>; i &lt; len; i++)</span><br><span class="line">        <span class="keyword">for</span> (j = <span class="number">0</span>; j &lt; len - i - <span class="number">1</span>; j ++)        </span><br><span class="line">            <span class="keyword">if</span> (intArray[j] &gt; intArray[j+<span class="number">1</span>])</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">int</span> t = intArray[j];</span><br><span class="line">                intArray[j] = intArray[j + <span class="number">1</span>];</span><br><span class="line">                intArray[j + <span class="number">1</span>] = t;</span><br><span class="line">            &#125;</span><br><span class="line">        System.out.println(<span class="string">"the result after bubblesort: "</span>);</span><br><span class="line">        <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; len - <span class="number">1</span>; i ++)</span><br><span class="line">            System.out.println(intArray[i]);</span><br><span class="line">    &#125;   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h3 id="把数组传递给方法"><a href="#把数组传递给方法" class="headerlink" title="把数组传递给方法"></a>把数组传递给方法</h3><h2 id="多维数组"><a href="#多维数组" class="headerlink" title="多维数组"></a>多维数组</h2><h3 id="二维数组的声明-amp-创建"><a href="#二维数组的声明-amp-创建" class="headerlink" title="二维数组的声明&amp;创建"></a>二维数组的声明&amp;创建</h3><p><strong>声明：</strong><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a[][];</span><br><span class="line"><span class="keyword">double</span> [][] b;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a[];</span><br><span class="line">a = &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>&#125;<span class="comment">//会报错!</span></span><br></pre></td></tr></table></figure>
+<ol>
+<li>为数组分配内存空间，后续再赋值</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">类型 数组名[];</span><br><span class="line">数组名 = <span class="keyword">new</span> 类型[数组长度]；</span><br></pre></td></tr></table></figure>
+<pre><code>例如：
+</code></pre>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">4</span>];</span><br><span class="line">a[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">a[<span class="number">1</span>] = <span class="number">2</span>;</span><br><span class="line">a[<span class="number">2</span>] = <span class="number">3</span>;</span><br><span class="line">a[<span class="number">3</span>] = <span class="number">4</span>;</span><br></pre></td></tr></table></figure>
+<p><strong>【举个栗子】</strong> 实现冒泡升序排列</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BubbleSort</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> i,j;</span><br><span class="line">        <span class="keyword">int</span> intArray[] = &#123;<span class="number">35</span>,<span class="number">22</span>,<span class="number">51</span>,<span class="number">10</span>,<span class="number">60</span>&#125;;</span><br><span class="line">        <span class="keyword">int</span> len = intArray.length;</span><br><span class="line">        <span class="keyword">for</span> (i = <span class="number">1</span>; i &lt; len; i++)</span><br><span class="line">        <span class="keyword">for</span> (j = <span class="number">0</span>; j &lt; len - i - <span class="number">1</span>; j ++)        </span><br><span class="line">            <span class="keyword">if</span> (intArray[j] &gt; intArray[j+<span class="number">1</span>])</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">int</span> t = intArray[j];</span><br><span class="line">                intArray[j] = intArray[j + <span class="number">1</span>];</span><br><span class="line">                intArray[j + <span class="number">1</span>] = t;</span><br><span class="line">            &#125;</span><br><span class="line">        System.out.println(<span class="string">"the result after bubblesort: "</span>);</span><br><span class="line">        <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; len - <span class="number">1</span>; i ++)</span><br><span class="line">            System.out.println(intArray[i]);</span><br><span class="line">    &#125;   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="把数组传递给方法"><a class="markdownIt-Anchor" href="#把数组传递给方法"></a> 把数组传递给方法</h3>
+<h2 id="多维数组"><a class="markdownIt-Anchor" href="#多维数组"></a> 多维数组</h2>
+<h3 id="二维数组的声明创建"><a class="markdownIt-Anchor" href="#二维数组的声明创建"></a> 二维数组的声明&amp;创建</h3>
+<p><strong>声明：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a[][];</span><br><span class="line"><span class="keyword">double</span> [][] b;</span><br></pre></td></tr></table></figure>
 <p><strong>分配内存空间</strong></p>
 <ol>
-<li>直接为每一维分配空间：<br><code>int a = new int[2][3];</code>创建一个2*3维的数组；</li>
+<li>直接为每一维分配空间：<br>
+<code>int a = new int[2][3];</code>创建一个2*3维的数组；</li>
 <li>从最高维开始分配：<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> b = <span class="keyword">new</span> <span class="keyword">int</span> [<span class="number">2</span>][];</span><br><span class="line">b[<span class="number">0</span>] = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">3</span>];</span><br><span class="line">b[<span class="number">1</span>] = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">5</span>];</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
@@ -447,7 +484,7 @@
 </tr>
 </tbody>
 </table>
-<p><strong>注意</strong> </p>
+<p><strong>注意</strong></p>
 <ul>
 <li>java数组的每一维不需要等长。</li>
 <li>使用new分配内存时，至少需要给出最高维的大小。</li>
@@ -560,6 +597,10 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="Wang Ke" />
+            
               <p class="site-author-name" itemprop="name">Wang Ke</p>
               <p class="site-description motion-element" itemprop="description">写来自我陶醉的。</p>
           </div>
@@ -571,7 +612,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -593,7 +634,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -603,6 +644,16 @@
 
           
 
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/wangkk1996" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+            </div>
           
 
           
@@ -626,7 +677,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一维数组"><span class="nav-number">1.</span> <span class="nav-text">一维数组</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#声明："><span class="nav-number">1.1.</span> <span class="nav-text">声明：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#初始化："><span class="nav-number">1.2.</span> <span class="nav-text">初始化：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#把数组传递给方法"><span class="nav-number">1.3.</span> <span class="nav-text">把数组传递给方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多维数组"><span class="nav-number">2.</span> <span class="nav-text">多维数组</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#二维数组的声明-amp-创建"><span class="nav-number">2.1.</span> <span class="nav-text">二维数组的声明&amp;创建</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一维数组"><span class="nav-number">1.</span> <span class="nav-text"> 一维数组</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#声明"><span class="nav-number">1.1.</span> <span class="nav-text"> 声明：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#初始化"><span class="nav-number">1.2.</span> <span class="nav-text"> 初始化：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#把数组传递给方法"><span class="nav-number">1.3.</span> <span class="nav-text"> 把数组传递给方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多维数组"><span class="nav-number">2.</span> <span class="nav-text"> 多维数组</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#二维数组的声明创建"><span class="nav-number">2.1.</span> <span class="nav-text"> 二维数组的声明&amp;创建</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -713,7 +764,13 @@
 
 
 
+  
+  
 
+
+
+  
+  
 
 
 
@@ -749,6 +806,21 @@
   
   
     <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three-waves.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/canvas_lines.min.js"></script>
   
 
 
@@ -1134,7 +1206,7 @@
         onPopupClose();
       }
     });
-  </script>
+  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 
 

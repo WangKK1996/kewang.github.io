@@ -7,7 +7,7 @@
 
 <html class="theme-next gemini use-motion" lang="zh-Hans">
 <head>
-  <meta charset="UTF-8"/>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="#222">
@@ -42,6 +42,32 @@
   
   <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
 
 
 
@@ -126,7 +152,7 @@
 
 
 
-  <title>java10的环境配置 | Kay Wang's Blog</title>
+  <title>java10的环境配置 | Kay Wang's Blog</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 
@@ -145,7 +171,7 @@
     
   
 
-  <div class="container sidebar-position-left page-post-detail">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -272,8 +298,7 @@
   
 </nav>
 
-
-
+<link href="https://cdn.bootcss.com/KaTeX/0.7.1/katex.min.css" rel="stylesheet">
  </div>
     </header>
 
@@ -302,7 +327,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Wang Ke">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -388,15 +413,22 @@
       
         <p>好久没碰JAVA，今天重新下了个JDK10，发现配置较之前学习的有所变化。主要是PATH和JRE的环境配置：</p>
 <a id="more"></a>
-<h2 id="CLASSPATH配置"><a href="#CLASSPATH配置" class="headerlink" title="CLASSPATH配置"></a>CLASSPATH配置</h2><ul>
-<li>首先在环境变量中添加JAVA_HOME为jdk的安装路径；</li>
-<li><p>新建一个CLASSPATH的系统变量，并添加<code>.;%JAVA_HOME%\lib;%JAVA_HOME%\lib\tools.jar</code></p>
+<h2 id="classpath配置"><a class="markdownIt-Anchor" href="#classpath配置"></a> CLASSPATH配置</h2>
+<ul>
+<li>
+<p>首先在环境变量中添加JAVA_HOME为jdk的安装路径；</p>
+</li>
+<li>
+<p>新建一个CLASSPATH的系统变量，并添加<code>.;%JAVA_HOME%\lib;%JAVA_HOME%\lib\tools.jar</code></p>
 <p>注意前面不要忘记加点和分号。</p>
 </li>
 </ul>
-<h2 id="PATH配置"><a href="#PATH配置" class="headerlink" title="PATH配置"></a>PATH配置</h2><p>直接用绝对路径，添加<code>&lt;PATH_TO_JDK\bin&gt;</code></p>
+<h2 id="path配置"><a class="markdownIt-Anchor" href="#path配置"></a> PATH配置</h2>
+<p>直接用绝对路径，添加<code>&lt;PATH_TO_JDK\bin&gt;</code></p>
 <p>（并不需要把jre也加进去）</p>
-<h2 id="验证安装是否成功"><a href="#验证安装是否成功" class="headerlink" title="验证安装是否成功"></a>验证安装是否成功</h2><p>老三样，打开cmd，依次输入：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">java -version</span><br><span class="line">javac</span><br><span class="line">java</span><br></pre></td></tr></table></figure></p>
+<h2 id="验证安装是否成功"><a class="markdownIt-Anchor" href="#验证安装是否成功"></a> 验证安装是否成功</h2>
+<p>老三样，打开cmd，依次输入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">java -version</span><br><span class="line">javac</span><br><span class="line">java</span><br></pre></td></tr></table></figure>
 <p>都成功就说明装完啦~</p>
 
       
@@ -506,6 +538,10 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="Wang Ke" />
+            
               <p class="site-author-name" itemprop="name">Wang Ke</p>
               <p class="site-description motion-element" itemprop="description">写来自我陶醉的。</p>
           </div>
@@ -517,7 +553,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -539,7 +575,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -549,6 +585,16 @@
 
           
 
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/wangkk1996" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+            </div>
           
 
           
@@ -572,7 +618,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#CLASSPATH配置"><span class="nav-number">1.</span> <span class="nav-text">CLASSPATH配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PATH配置"><span class="nav-number">2.</span> <span class="nav-text">PATH配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#验证安装是否成功"><span class="nav-number">3.</span> <span class="nav-text">验证安装是否成功</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#classpath配置"><span class="nav-number">1.</span> <span class="nav-text"> CLASSPATH配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#path配置"><span class="nav-number">2.</span> <span class="nav-text"> PATH配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#验证安装是否成功"><span class="nav-number">3.</span> <span class="nav-text"> 验证安装是否成功</span></a></li></ol></div>
             
 
           </div>
@@ -659,7 +705,13 @@
 
 
 
+  
+  
 
+
+
+  
+  
 
 
 
@@ -695,6 +747,21 @@
   
   
     <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three-waves.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/canvas_lines.min.js"></script>
   
 
 
@@ -1080,7 +1147,7 @@
         onPopupClose();
       }
     });
-  </script>
+  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 
 

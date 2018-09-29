@@ -7,7 +7,7 @@
 
 <html class="theme-next gemini use-motion" lang="zh-Hans">
 <head>
-  <meta charset="UTF-8"/>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="#222">
@@ -42,6 +42,32 @@
   
   <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
 
 
 
@@ -87,7 +113,7 @@
 <meta property="og:site_name" content="Kay Wang&#39;s Blog">
 <meta property="og:description" content="《JAVA程序设计教程》笔记（五）——CHAP6 类和对象 重点：  类的构造方法">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-26T03:07:42.793Z">
+<meta property="og:updated_time" content="2018-09-26T03:19:44.561Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JAVA笔记（五）-类和对象">
 <meta name="twitter:description" content="《JAVA程序设计教程》笔记（五）——CHAP6 类和对象 重点：  类的构造方法">
@@ -126,7 +152,7 @@
 
 
 
-  <title>JAVA笔记（五）-类和对象 | Kay Wang's Blog</title>
+  <title>JAVA笔记（五）-类和对象 | Kay Wang's Blog</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 
@@ -145,7 +171,7 @@
     
   
 
-  <div class="container sidebar-position-left page-post-detail">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -272,8 +298,7 @@
   
 </nav>
 
-
-
+<link href="https://cdn.bootcss.com/KaTeX/0.7.1/katex.min.css" rel="stylesheet">
  </div>
     </header>
 
@@ -302,7 +327,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Wang Ke">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -392,16 +417,22 @@
 <li>类的构造方法</li>
 </ul>
 <a id="more"></a>
-<h1 id="类"><a href="#类" class="headerlink" title="类"></a>类</h1><h2 id="类的声明"><a href="#类的声明" class="headerlink" title="类的声明"></a>类的声明</h2><h2 id="类体"><a href="#类体" class="headerlink" title="类体"></a>类体</h2><p>类体中包含变量的声明以及类方法的定义。</p>
-<h3 id="类的构造方法"><a href="#类的构造方法" class="headerlink" title="类的构造方法"></a>类的构造方法</h3><ul>
+<h1 id="类"><a class="markdownIt-Anchor" href="#类"></a> 类</h1>
+<h2 id="类的声明"><a class="markdownIt-Anchor" href="#类的声明"></a> 类的声明</h2>
+<h2 id="类体"><a class="markdownIt-Anchor" href="#类体"></a> 类体</h2>
+<p>类体中包含变量的声明以及类方法的定义。</p>
+<h3 id="类的构造方法"><a class="markdownIt-Anchor" href="#类的构造方法"></a> 类的构造方法</h3>
+<ul>
 <li>构造方法的名称和类名相同</li>
 <li>没有返回类型，返回值，也不需要修饰符</li>
 <li>虽然看起来和一般的成员方法没有区别，但不能被直接调用，只能被new运算符调用</li>
 <li>构造方法不能被继承（因为它不是类的成员）</li>
 <li>子类可以调用父类的构造方法</li>
 </ul>
-<p><strong>【举个栗子】</strong> 创建一个car类并调用。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Car</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String Brand;</span><br><span class="line">    <span class="keyword">int</span> gas;</span><br><span class="line">    Car (String vBrand, <span class="keyword">int</span> vgas )&#123; <span class="comment">//构造方法</span></span><br><span class="line">        Brand = vBrand;</span><br><span class="line">        gas = vgas;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (gas &gt; <span class="number">0</span>)</span><br><span class="line">        gas -=<span class="number">10</span>;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        System.out.println(<span class="string">"没油了，不能跑啦~"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">Disp</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"品牌："</span>+Brand+<span class="string">"油量"</span>+gas);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Example6_1</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span>&#123;</span><br><span class="line">        Car MyCar = <span class="keyword">new</span> Car(<span class="string">"Audi"</span>, <span class="number">10</span>); <span class="comment">//创建对象mycar</span></span><br><span class="line">        MyCar.Disp(); <span class="comment">//调用disp方法</span></span><br><span class="line">        MyCar.run(); <span class="comment">//调用run方法</span></span><br><span class="line">        System.out.println(<span class="string">"car is running……"</span>);</span><br><span class="line">        MyCar.run();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h2 id="成员变量"><a href="#成员变量" class="headerlink" title="成员变量"></a>成员变量</h2>
+<p><strong>【举个栗子】</strong> 创建一个car类并调用。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Car</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String Brand;</span><br><span class="line">    <span class="keyword">int</span> gas;</span><br><span class="line">    Car (String vBrand, <span class="keyword">int</span> vgas )&#123; <span class="comment">//构造方法</span></span><br><span class="line">        Brand = vBrand;</span><br><span class="line">        gas = vgas;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (gas &gt; <span class="number">0</span>)</span><br><span class="line">        gas -=<span class="number">10</span>;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        System.out.println(<span class="string">"没油了，不能跑啦~"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">Disp</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"品牌："</span>+Brand+<span class="string">"油量"</span>+gas);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Example6_1</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span>&#123;</span><br><span class="line">        Car MyCar = <span class="keyword">new</span> Car(<span class="string">"Audi"</span>, <span class="number">10</span>); <span class="comment">//创建对象mycar</span></span><br><span class="line">        MyCar.Disp(); <span class="comment">//调用disp方法</span></span><br><span class="line">        MyCar.run(); <span class="comment">//调用run方法</span></span><br><span class="line">        System.out.println(<span class="string">"car is running……"</span>);</span><br><span class="line">        MyCar.run();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="成员变量"><a class="markdownIt-Anchor" href="#成员变量"></a> 成员变量</h2>
+
       
     </div>
     
@@ -441,8 +472,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/09/23/数据结构Pyhon（一）/" rel="prev" title="数据结构Pyhon（一）-抽象数据结构">
-                数据结构Pyhon（一）-抽象数据结构 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/09/23/数据结构Pyhon（一）/" rel="prev" title="数据结构Python（一）-抽象数据结构">
+                数据结构Python（一）-抽象数据结构 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -509,6 +540,10 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="Wang Ke" />
+            
               <p class="site-author-name" itemprop="name">Wang Ke</p>
               <p class="site-description motion-element" itemprop="description">写来自我陶醉的。</p>
           </div>
@@ -520,7 +555,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -542,7 +577,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -552,6 +587,16 @@
 
           
 
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/wangkk1996" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+            </div>
           
 
           
@@ -575,7 +620,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#类"><span class="nav-number">1.</span> <span class="nav-text">类</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#类的声明"><span class="nav-number">1.1.</span> <span class="nav-text">类的声明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类体"><span class="nav-number">1.2.</span> <span class="nav-text">类体</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#类的构造方法"><span class="nav-number">1.2.1.</span> <span class="nav-text">类的构造方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#成员变量"><span class="nav-number">1.3.</span> <span class="nav-text">成员变量</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#类"><span class="nav-number">1.</span> <span class="nav-text"> 类</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#类的声明"><span class="nav-number">1.1.</span> <span class="nav-text"> 类的声明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类体"><span class="nav-number">1.2.</span> <span class="nav-text"> 类体</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#类的构造方法"><span class="nav-number">1.2.1.</span> <span class="nav-text"> 类的构造方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#成员变量"><span class="nav-number">1.3.</span> <span class="nav-text"> 成员变量</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -662,7 +707,13 @@
 
 
 
+  
+  
 
+
+
+  
+  
 
 
 
@@ -698,6 +749,21 @@
   
   
     <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three-waves.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/canvas_lines.min.js"></script>
   
 
 
@@ -1083,7 +1149,7 @@
         onPopupClose();
       }
     });
-  </script>
+  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 
 
