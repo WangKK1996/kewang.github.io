@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Kay Wang&#39;s Blog">
 <meta property="og:description" content="刚开学没事干，所以想着来搭个博客吧。也是为了激励自己能够养成及时总结的习惯。 hexo+github的博客搭建教程网络上很多，我主要搜了知乎的这一篇，讲得很详细：GitHub+Hexo 搭建个人网站详细教程 此外这个作者的汇总做的也不错：Hexo+GithubPages&amp;amp;CodingPages搭建自己的个人博客 还有这个作者的汇总：我的个人博客之旅：从jekyll到hexo">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-30T02:53:03.817Z">
+<meta property="og:updated_time" content="2018-10-06T03:56:10.830Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo+github博客搭建">
 <meta name="twitter:description" content="刚开学没事干，所以想着来搭个博客吧。也是为了激励自己能够养成及时总结的习惯。 hexo+github的博客搭建教程网络上很多，我主要搜了知乎的这一篇，讲得很详细：GitHub+Hexo 搭建个人网站详细教程 此外这个作者的汇总做的也不错：Hexo+GithubPages&amp;amp;CodingPages搭建自己的个人博客 还有这个作者的汇总：我的个人博客之旅：从jekyll到hexo">
@@ -361,6 +361,16 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/09/08/hexo-github博客搭建/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/09/08/hexo-github博客搭建/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -368,6 +378,39 @@
 
           
 
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.3k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  5
+                </span>
+              
+            </div>
           
 
           
@@ -461,6 +504,9 @@
 <p>这个很简单，在next主题配置文件中，找到：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># Sidebar Avatar</span><br><span class="line">avatar: /images/avatar.jpg</span><br></pre></td></tr></table></figure>
 <p>把avatar前面的#去掉即可。头像图片放在next/source/images里。</p>
+<h2 id="使用gitment添加评论"><a class="markdownIt-Anchor" href="#使用gitment添加评论"></a> 使用gitment添加评论</h2>
+<p>我觉得gitment比较方便的是不用另外注册账号了~</p>
+<p>主要参考<a href="https://ryanluoxu.github.io/2017/11/27/Hexo-Next-%E6%B7%BB%E5%8A%A0-Gitment-%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/" target="_blank" rel="noopener">这篇的配置</a></p>
 <div id="footnotes"><hr><div id="footnotelist"><ol style="list-style:none; padding-left: 0;"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px;">1.</span><span style="display: inline-block; vertical-align: top;">这是一个备注</span><br></li></ol></div></div></escape></span></pre></td></tr></table></figure><a href="#fnref:1" rev="footnote"> ↩</a>
       
     </div>
@@ -529,6 +575,13 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      
+        <div id="gitment-container"></div>
+      
+    </div>
 
   
 
@@ -647,7 +700,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#设置多个tags以及categories"><span class="nav-number">1.</span> <span class="nav-text"> 设置多个tags以及categories</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改文本链接样式"><span class="nav-number">2.</span> <span class="nav-text"> 修改文本链接样式：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在侧边栏添加tags"><span class="nav-number">3.</span> <span class="nav-text"> 在侧边栏添加tags：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#增加搜索框"><span class="nav-number">4.</span> <span class="nav-text"> 增加搜索框</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#以下是网络上的方法但是我尝试了一下没啥用"><span class="nav-number">4.1.</span> <span class="nav-text"> 以下是网络上的方法，但是我尝试了一下没啥用= =</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#以下是next主题配置自带的功能"><span class="nav-number">4.2.</span> <span class="nav-text"> 以下是next主题配置自带的功能：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#控制预览字数博文缩略显示"><span class="nav-number">5.</span> <span class="nav-text"> 控制预览字数/博文缩略显示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#markdown-it-plus"><span class="nav-number">6.</span> <span class="nav-text"> markdown-it-plus</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#插入数学公式"><span class="nav-number">6.1.</span> <span class="nav-text"> 插入数学公式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置脚标"><span class="nav-number">6.2.</span> <span class="nav-text"> 设置脚标</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#next-背景的动态化设置"><span class="nav-number">7.</span> <span class="nav-text"> next 背景的动态化设置。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加头像"><span class="nav-number">8.</span> <span class="nav-text"> 添加头像</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#设置多个tags以及categories"><span class="nav-number">1.</span> <span class="nav-text"> 设置多个tags以及categories</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改文本链接样式"><span class="nav-number">2.</span> <span class="nav-text"> 修改文本链接样式：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在侧边栏添加tags"><span class="nav-number">3.</span> <span class="nav-text"> 在侧边栏添加tags：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#增加搜索框"><span class="nav-number">4.</span> <span class="nav-text"> 增加搜索框</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#以下是网络上的方法但是我尝试了一下没啥用"><span class="nav-number">4.1.</span> <span class="nav-text"> 以下是网络上的方法，但是我尝试了一下没啥用= =</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#以下是next主题配置自带的功能"><span class="nav-number">4.2.</span> <span class="nav-text"> 以下是next主题配置自带的功能：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#控制预览字数博文缩略显示"><span class="nav-number">5.</span> <span class="nav-text"> 控制预览字数/博文缩略显示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#markdown-it-plus"><span class="nav-number">6.</span> <span class="nav-text"> markdown-it-plus</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#插入数学公式"><span class="nav-number">6.1.</span> <span class="nav-text"> 插入数学公式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置脚标"><span class="nav-number">6.2.</span> <span class="nav-text"> 设置脚标</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#next-背景的动态化设置"><span class="nav-number">7.</span> <span class="nav-text"> next 背景的动态化设置。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加头像"><span class="nav-number">8.</span> <span class="nav-text"> 添加头像</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用gitment添加评论"><span class="nav-number">9.</span> <span class="nav-text"> 使用gitment添加评论</span></a></li></ol></div>
             
 
           </div>
@@ -852,6 +905,43 @@
 
 
 
+
+
+<!-- LOCAL: You can save these files to your site and update links -->
+    
+        
+        <link rel="stylesheet" href="https://aimingoo.github.io/gitmint/style/default.css">
+        <script src="https://aimingoo.github.io/gitmint/dist/gitmint.browser.js"></script>
+    
+<!-- END LOCAL -->
+
+    
+
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitmint({
+            id: window.location.pathname, 
+            owner: 'WangKK1996',
+            repo: 'https://github.com/WangKK1996/gitment-comments',
+            
+            lang: "zh-Hans" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+            
+            oauth: {
+            
+            
+                client_secret: 'e0017f50d4dfeb4d7640797113b993e87974491a',
+            
+                client_id: 'd0c9b58cd3f3d15bcdeb'
+            }});
+        gitment.render('gitment-container');
+      }
+
+      
+      renderGitment();
+      
+      </script>
+    
 
 
 
