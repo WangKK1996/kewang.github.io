@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Kay Wang&#39;s Blog">
 <meta property="og:description" content="本篇不是教程！不是教程！不是教程！算是一个资源汇总，一小时内搞定hadoop集群，上手hive命令不是梦。 前提是：  装好了docker，docker安装文档 装好了docker-compose（1.10.0版本及以上），docker-compose的官方安装文档 拥有git账号； 拥有docker hub账号； 一个至少2G内存的linux虚拟机/服务器。（内存不够的话，跑hive可能会被强制">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-12-12T13:09:04.965Z">
+<meta property="og:updated_time" content="2018-12-12T13:18:21.447Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="VPS + docker快速上手hadoop(linux)">
 <meta name="twitter:description" content="本篇不是教程！不是教程！不是教程！算是一个资源汇总，一小时内搞定hadoop集群，上手hive命令不是梦。 前提是：  装好了docker，docker安装文档 装好了docker-compose（1.10.0版本及以上），docker-compose的官方安装文档 拥有git账号； 拥有docker hub账号； 一个至少2G内存的linux虚拟机/服务器。（内存不够的话，跑hive可能会被强制">
@@ -402,7 +402,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  530
+                  543
                 </span>
               
 
@@ -440,7 +440,7 @@
 
       
         <p>本篇不是教程！不是教程！不是教程！算是一个资源汇总，一小时内搞定hadoop集群，上手hive命令不是梦。</p>
-<p>前提是：</p>
+<p><strong>前提是：</strong></p>
 <ol>
 <li>装好了docker，<a href="https://yeasy.gitbooks.io/docker_practice/install/ubuntu.html#ubuntu-1604-" target="_blank" rel="noopener">docker安装文档</a></li>
 <li>装好了docker-compose（1.10.0版本及以上），docker-compose的<a href="https://docs.docker.com/compose/install/#install-compose" target="_blank" rel="noopener">官方安装文档</a></li>
@@ -461,7 +461,9 @@
 <p>Docker Hub上排名第一位的是uhopper/hadoop,利用docker-compose实现hadoop集群的部署。</p>
 <p>无脑拉一个前人的工作下来，推荐<a href="https://codito.in/hadoop-cluster-in-docker/" target="_blank" rel="noopener">这位小哥的博客</a>，博客里提供了git clone的地址。</p>
 <p>查看服务器中namenode的IP地址，在命令行中输入：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> docker inspect namenode | grep IPAddress</span></span><br><span class="line">            "SecondaryIPAddresses": null,                                                    </span><br><span class="line">            "IPAddress": "",                                                         </span><br><span class="line">                    "IPAddress": "172.18.0.2",</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> docker inspect namenode | grep IPAddress</span></span><br></pre></td></tr></table></figure>
+<p>会得到输出结果，我的结果是：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">"SecondaryIPAddresses": null,                                                    </span><br><span class="line">"IPAddress": "",                                                         </span><br><span class="line">        "IPAddress": "172.18.0.2",</span><br></pre></td></tr></table></figure>
 <p>利用Xshell的隧道功能，可以将服务上的<code>172.18.0.2/50070</code>映射到本地的localhost，方便查看集群状态。</p>
 <h2 id="上手hive"><a class="markdownIt-Anchor" href="#上手hive"></a> 上手hive</h2>
 <p>该项目和上面hadoop的docker是完全独立的，上述的hadoop的docker-compose只是搭建了一个干净的hadoop集群，而下面的docker则进一步实现了hive。</p>

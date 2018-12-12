@@ -393,7 +393,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  530
+                  543
                 </span>
               
 
@@ -432,7 +432,7 @@
       
         
           <p>本篇不是教程！不是教程！不是教程！算是一个资源汇总，一小时内搞定hadoop集群，上手hive命令不是梦。</p>
-<p>前提是：</p>
+<p><strong>前提是：</strong></p>
 <ol>
 <li>装好了docker，<a href="https://yeasy.gitbooks.io/docker_practice/install/ubuntu.html#ubuntu-1604-" target="_blank" rel="noopener">docker安装文档</a></li>
 <li>装好了docker-compose（1.10.0版本及以上），docker-compose的<a href="https://docs.docker.com/compose/install/#install-compose" target="_blank" rel="noopener">官方安装文档</a></li>
@@ -580,7 +580,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  384
+                  395
                 </span>
               
 
@@ -618,56 +618,14 @@
 
       
         
-          
-            <h2 id="dict"><a class="markdownIt-Anchor" href="#dict"></a> dict</h2>
-<h3 id="迭代方法"><a class="markdownIt-Anchor" href="#迭代方法"></a> 迭代方法</h3>
-<ol>
-<li>
-<p>使用<code>dict.items</code>同时迭代字典的KEY和内容。</p>
- <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> name, value <span class="keyword">in</span> dict.items():</span><br><span class="line">    ……</span><br></pre></td></tr></table></figure>
-</li>
-<li>
-<p><code>dict.values()</code>用来迭代字典的名字，但是python版本的问题导致values顺序不能保证，所以如果有明确对应需要的话，一定要用<strong>键值对</strong>的方式批量赋值。</p>
-</li>
-<li>
-<p>直接迭代dict，得到的内容是一个一个的小字典：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> d <span class="keyword">in</span> dict:</span><br><span class="line"> print(d[<span class="string">"keyname"</span>])</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<h2 id="json"><a class="markdownIt-Anchor" href="#json"></a> json</h2>
-<p>json也是一种存储文件的形式，有几个比较常见的函数如<code>json.dumps()</code>,<code>json.loads()</code></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">x = &#123;</span><br><span class="line">    <span class="string">"name"</span>:<span class="string">"John"</span>,</span><br><span class="line">    <span class="string">"age"</span>:<span class="number">30</span>,</span><br><span class="line">    <span class="string">"city"</span>:<span class="string">"New York"</span></span><br><span class="line">&#125; <span class="comment"># 这是一个字典的形式</span></span><br><span class="line">y = json.loads() <span class="comment"># 得到的是一个python dictionary</span></span><br><span class="line">z = json.dumps() <span class="comment"># 得到的是Json string</span></span><br></pre></td></tr></table></figure>
-<h2 id="python的迭代器iter和next"><a class="markdownIt-Anchor" href="#python的迭代器iter和next"></a> python的迭代器iter()和next()</h2>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">mytuple = (<span class="string">"apple"</span>, <span class="string">"banana"</span>, <span class="string">"cherry"</span>)</span><br><span class="line">myit = iter(mytuple)</span><br><span class="line"></span><br><span class="line">print(next(myit))</span><br><span class="line">print(next(myit))</span><br><span class="line">print(next(myit))</span><br></pre></td></tr></table></figure>
-<p>这样一波操作可以把里面的所有元素都打印一遍。</p>
-<h2 id="numpy"><a class="markdownIt-Anchor" href="#numpy"></a> numpy</h2>
-<p>numpy的slice的改变是会改变原有的内容的。</p>
-<h2 id="pandas"><a class="markdownIt-Anchor" href="#pandas"></a> pandas</h2>
-<ol>
-<li><code>pd.qcut(x, q, labels=None, retbins=False, precision=3, duplicates='raise')</code>返回按照顺序分割好的区</li>
-</ol>
-<h2 id="sklearn"><a class="markdownIt-Anchor" href="#sklearn"></a> sklearn</h2>
-<h3 id="机器学习方向"><a class="markdownIt-Anchor" href="#机器学习方向"></a> 机器学习方向</h3>
-<h4 id="标签转换"><a class="markdownIt-Anchor" href="#标签转换"></a> 标签转换</h4>
-<p><code>sklearn.preprocessing.OneHotEncoder()</code>以及<code>sklearn.preprocessing.LabelEncoder()</code><br>
-LabelEncoder底下有一个<code>fit_transform</code>超级好用！</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dataset[<span class="string">'Sex_Code'</span>] = label.fit_transform(dataset[<span class="string">'Sex'</span>])</span><br></pre></td></tr></table></figure>
-<p>这个东西搭配pandas的<code>pd.get_dummies</code>食用效果更佳</p>
-<h3 id="结果输出和比较"><a class="markdownIt-Anchor" href="#结果输出和比较"></a> 结果输出和比较</h3>
-<ol>
-<li>
-<p><code>sklearn.metrics</code></p>
-<ul>
-<li><code>metrics.accuracy_score()</code></li>
-<li><code>metrics.confusion_matrix(y_true, y_pred, labels=None, sample_weight=None)</code>用来计算混淆矩阵，但是要画出来还是需要一点点的加工。</li>
-</ul>
-</li>
-<li>
-<p>现在还可以用voting来进行集成。一般来说，用很多的分类器，最后使用voting来打比赛会更合适。</p>
-</li>
-</ol>
-
-          
+          <p>没有条理，看到就记录一下。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/11/13/字典的一些用法/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -733,7 +691,7 @@ LabelEncoder底下有一个<code>fit_transform</code>超级好用！</p>
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/10/15/数据结构Python（五）-二叉树和树/" itemprop="url">数据结构Pyhton（五）-二叉树和树.md</a></h1>
+                <a class="post-title-link" href="/2018/10/15/数据结构Python（五）-二叉树和树/" itemprop="url">数据结构Pyhton（五）-二叉树和树</a></h1>
         
 
         <div class="post-meta">
@@ -839,8 +797,7 @@ LabelEncoder底下有一个<code>fit_transform</code>超级好用！</p>
 
       
         
-          <p>二叉树也是一些基本元素的汇集，<br>
-树形结构也是由结点和结点之间的连接关系构成的，但是其结构和线性结构表不同，最重要的特征有：</p>
+          <p>二叉树也是一些基本元素的汇集，树形结构也是由结点和结点之间的连接关系构成的，但是其结构和线性结构表不同，最重要的特征有：</p>
 <ul>
 <li>如果一个结构不空，则其中存在着唯一的起始结点，称为“树根”。</li>
 <li>按结构的连接关系，树根外的其余结点都有且只有一个<em>前驱</em>，但它可以有0个或者多个后继。并且在非空的树结构中一定有些结点并不连接到其他结点。</li>
@@ -851,7 +808,7 @@ LabelEncoder底下有一个<code>fit_transform</code>超级好用！</p>
 <p>本章重点：</p>
 <ul>
 <li>利用堆结构实现优先队列</li>
-<li></li>
+<li>哈夫曼树</li>
 </ul>
           <!--noindex-->
           <div class="post-button text-center">
