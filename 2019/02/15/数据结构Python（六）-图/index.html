@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="python,数据结构," />
 
 
 
@@ -79,16 +79,18 @@
 
 
 
-<meta name="description" content="写来自我陶醉的。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Kay Wang&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/tags/hexo/index.html">
+<meta name="description" content="本章重点  图的Python实现">
+<meta name="keywords" content="python,数据结构">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据结构Python（六）-图">
+<meta property="og:url" content="http://yoursite.com/2019/02/15/数据结构Python（六）-图/index.html">
 <meta property="og:site_name" content="Kay Wang&#39;s Blog">
-<meta property="og:description" content="写来自我陶醉的。">
+<meta property="og:description" content="本章重点  图的Python实现">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-02-15T13:32:29.289Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Kay Wang&#39;s Blog">
-<meta name="twitter:description" content="写来自我陶醉的。">
+<meta name="twitter:title" content="数据结构Python（六）-图">
+<meta name="twitter:description" content="本章重点  图的Python实现">
 
 
 
@@ -118,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/hexo/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/02/15/数据结构Python（六）-图/"/>
 
 
 
 
 
-  <title>标签: hexo | Kay Wang's Blog</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title>数据结构Python（六）-图 | Kay Wang's Blog</title><!-- hexo-inject:begin --><link rel='stylesheet' href='custom_css_source'><!-- hexo-inject:end -->
   
 
 
@@ -143,7 +145,7 @@
     
   
 
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left ">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -280,54 +282,240 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>hexo<small>标签</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/15/数据结构Python（六）-图/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Wang Ke">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Kay Wang's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2018/09/08/hexo-github博客搭建/" itemprop="url">
-              
-                <span itemprop="name">hexo+github博客搭建</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">数据结构Python（六）-图</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-08T14:23:18+08:00"
-              content="2018-09-08" >
-          09-08
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-15T19:49:25+08:00">
+                2019-02-15
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CS之路/" itemprop="url" rel="index">
+                    <span itemprop="name">CS之路</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/02/15/数据结构Python（六）-图/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2019/02/15/数据结构Python（六）-图/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  312
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="本章重点"><a class="markdownIt-Anchor" href="#本章重点"></a> 本章重点</h2>
+<ol>
+<li>图的Python实现</li>
+</ol>
+<a id="more"></a>
+<h2 id="图的概念"><a class="markdownIt-Anchor" href="#图的概念"></a> 图的概念</h2>
+<ol>
+<li><strong>完全图</strong>：任意两个顶点之间都有边的图（有向/无向）。
+<ul>
+<li>n个顶点的无向完全图有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>×</mo><mrow><mo fence="true">(</mo><mi>n</mi><mo>−</mo><mn>1</mn><mo fence="true">)</mo></mrow><mi mathvariant="normal">/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">n\times \left(n-1\right)/2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathit">n</span><span class="mbin">×</span><span class="minner textstyle uncramped"><span class="style-wrap reset-textstyle textstyle uncramped" style="top:0em;">(</span><span class="mord mathit">n</span><span class="mbin">−</span><span class="mord mathrm">1</span><span class="style-wrap reset-textstyle textstyle uncramped" style="top:0em;">)</span></span><span class="mord mathrm">/</span><span class="mord mathrm">2</span></span></span></span>个边</li>
+<li>n个顶点的有向完全图有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>×</mo><mrow><mo fence="true">(</mo><mi>n</mi><mo>−</mo><mn>1</mn><mo fence="true">)</mo></mrow></mrow><annotation encoding="application/x-tex">n\times \left(n-1\right)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathit">n</span><span class="mbin">×</span><span class="minner textstyle uncramped"><span class="style-wrap reset-textstyle textstyle uncramped" style="top:0em;">(</span><span class="mord mathit">n</span><span class="mbin">−</span><span class="mord mathrm">1</span><span class="style-wrap reset-textstyle textstyle uncramped" style="top:0em;">)</span></span></span></span></span>个边</li>
+</ul>
+</li>
+<li><strong>简单路径</strong>：起点和终点外的其他顶点均不相同，成为<em>简单回路</em>。</li>
+<li><strong>有根图</strong>：顶点v到图G中其他每个顶点均有路径，就称G为有根图，顶点v为图G的一个根。</li>
+<li><strong>连通无向图</strong>：无向图中的任意两个顶点都连通</li>
+<li><strong>强连通有向图</strong>：有向图G中两个顶点两个方向的路径都存在，称G为强连通有向图。</li>
+<li><strong>最小连通图</strong>：去掉任何一条边都不再是有根图。</li>
+<li>子图、连通子图<br>
+最大连通又叫做 <strong>连通分量</strong>，如果G连通，那么G将只有一个连通分量；反之，它的连通分量就多于一个。</li>
+</ol>
+<h3 id="带权图和网络邻接矩阵和邻接表"><a class="markdownIt-Anchor" href="#带权图和网络邻接矩阵和邻接表"></a> 带权图和网络——邻接矩阵和邻接表</h3>
+<p>邻接矩阵因为要占<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>n</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">n^2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.8141079999999999em;"></span><span class="strut bottom" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit">n</span><span class="vlist"><span style="top:-0.363em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped"><span class="mord mathrm">2</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span>的空间，所以可能带来空间的浪费。所以，采用邻接表的形式。</p>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/python/" rel="tag"># python</a>
+          
+            <a href="/tags/数据结构/" rel="tag"># 数据结构</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/12/03/VPS-docker快速上手hadoop/" rel="next" title="VPS + docker快速上手hadoop(linux)">
+                <i class="fa fa-chevron-left"></i> VPS + docker快速上手hadoop(linux)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/02/17/LSTM中sigmoid和tanh函数的区别/" rel="prev" title="LSTM中sigmoid和tanh函数的区别">
+                LSTM中sigmoid和tanh函数的区别 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -335,6 +523,17 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      
+        <div id="gitment-container"></div>
+      
+    </div>
+
+  
+
+
 
         </div>
         
@@ -355,8 +554,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -430,6 +638,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#本章重点"><span class="nav-number">1.</span> <span class="nav-text"> 本章重点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图的概念"><span class="nav-number">2.</span> <span class="nav-text"> 图的概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#带权图和网络邻接矩阵和邻接表"><span class="nav-number">2.1.</span> <span class="nav-text"> 带权图和网络——邻接矩阵和邻接表</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -591,6 +815,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
@@ -637,6 +865,30 @@
 
     
 
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitmint({
+            id: window.location.pathname, 
+            owner: 'WangKK1996',
+            repo: 'https://github.com/WangKK1996/gitment-comments',
+            
+            lang: "zh-Hans" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+            
+            oauth: {
+            
+            
+                client_secret: 'e0017f50d4dfeb4d7640797113b993e87974491a',
+            
+                client_id: 'd0c9b58cd3f3d15bcdeb'
+            }});
+        gitment.render('gitment-container');
+      }
+
+      
+      renderGitment();
+      
+      </script>
     
 
 
