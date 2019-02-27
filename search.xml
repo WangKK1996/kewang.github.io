@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[openpose踩坑记]]></title>
+    <url>%2F2019%2F02%2F27%2Fopenpose%E8%B8%A9%E5%9D%91%E8%AE%B0%2F</url>
+    <content type="text"><![CDATA[暑假时第一次接触深度学习，老大直接丢给我openpose的复现，因为是从小白学起的，配环境的时候踩了很多很多坑，本来拉下来的是纯净的ubuntu16.04系统，一步一步从0开始配置的环境。但是令人沮丧的是，最终CUDA还是无法运行，所以我放弃抵抗，拉了前人搭好Detectron框架……但是中间一些步骤我觉得还蛮有意义的，特此记录。 docker拉的纯净的cuda+ubuntu16.04 我用的是nvidia/cuda：8.0-cudnn5-runtime-ubuntu16.04镜像: 1sudo docker pull nvidia/cuda：8.0-cudnn5-runtime-ubuntu16.04 新装的ubuntu，连apt-get都没有，所以先apt-get update 装git/vim：apt-get install git(这一步是为了git clone openCV用的，如果之前有了openpose的话，就不需要了（但是装个git总是好的） 接下来是装openpose的附属了~ 3. 装cmake-gui: apt-get install cmake-qt-gui 4. 再装lsb-release&amp;wget(因为作者给的sh里面用到了~） 123apt-get install lsb-releaseapt-get install wgetapt-get install apt-utils #(不知道什么玩意儿但是被报错了……） 接下来，首先从openpose的官方git上把文件夹git clone下来，接着cd openpose，进行如下操作： 装cuda：ubuntu/install_cuda.sh`（注意要把sudo给删了~） 装cuDNN5.1: ubuntu/install_cudnn.sh 装AMD GPU version prerequisites：apt-get install libviennacl-dev 装caffe：ubuntu/install_cmake.sh 装openCV：apt-get install libopencv-dev 对了，还要装pip apt-get install python-pip bulid环境。在ubuntu系统下，可以不依靠cmake-gui,用他们给的makefile.txt即可： 首先，在目录下创建一个bulid文件夹， cd bulid 运行：cmake ../ 这样就得到了Cmakefiles了~ 编译阶段还蛮累（耗时间）的，不过一次编译终生享用，我之前已经cmake过，获得了CmakeFiles。所以，如果需要使用的话，后面的操作只需要直接在build文件夹里运行：make 就可以啦~ 试下能不能运行： 进入到openpose目录下，运行 12./build/examples/openpose/openpose.bin --video examples/media/video.avi --display 0 --write_video output/asia_office_out.avi./build/examples/openpose/openpose.bin --image_dir examples/media/ --write_images output/images --display 0 === 分割线 === 执行到这一步，我真的觉得胜利在望了！！ 然而，非常蛋疼的问题出现了。 demo报错，还是unknown error。真的查了一天都没查出来什么原因。 后来加了一个权限：让这个docker容器真的可以用硬件跑： 1sudo nvidia-docker run --privileged=true --name openpose_tutorial_wk 就是这个privileged=true啦。 然后它换了一个报错方式： 1Failed to initialize NVML: Driver/library version mismatch (╯‵□′)╯︵┻━┻ 但是好歹好像可以解决了（至少不是unknown了……） 上网，查，怎么换驱动: 首先，卸载现有的nvidia驱动： 12apt-get purge nvidia-*apt-get remove --purge nvidia-\* 接下来运行： 1apt-get install software-properties-common（为了让add-add-apt-repository可执行） 接着就可以用add-apt-repository： 1add-apt-repository ppa:graphics-drivers/ppa &amp;&amp; sudo apt update 一定要记得update!（血泪教训） 最后，apt install nvidia-390. ====你以为以上这些解决了吗？===== ====并没有，最后是docker pull了其它的镜像过来的=== ====就这样吧，还是现成的舒服.jpg==== 试下python API： （1）首先安装依赖包，按照网上教程，装了一堆： 1apt-get install python-numpy python-scipy python-matplotlib python-sklearn python-skimage python-h5py python-protobuf python-leveldb python-networkx python-nose python-pandas python-gflags cython ipython 如果报错，先apt update一下。 然后再装： 1apt-get install protobuf-c-compiler protobuf-compiler 最后，进入caffe的目录，执行： 1apt-get install gfortran （没有fgortran这个编译器可能会报错，所以先装好） 接下来再执行caffe给的依赖包。 1for req in $(cat requirements.txt); do pip install $req; done （2）改makefile.list里面的3个地方，因为我装openpose的时候用的是他们给的caffe,而他们的caffe默认是不编译python的： ① 252行：: option(BUILD_PYTHON &quot;Build OpenPose python.&quot; OFF)的OFF改成ON。 ② 675行：-DBUILD_python=OFF，改成ON。 ③ 680行：-DBUILD_python=OFF，改成ON。 （3）然后要记得改系统变量，否则在python中import caffe会出错的。这个地方比较麻烦，因为我把openpose装在自己的文件夹里了，导致这个docker其实不是很完善（哭泣)，一会儿我会重新装一下的。 ① 首先：vim /etc/profile ② 在末尾添加： 1export PYTHONPATH=/path/to/caffe/python:$PYTHONPATH 保存后，再执行： 1source /etc/profile # 使之生效 这些都准备好了之后，试试给的两个sample： 123cd build/examples/tutorial_pythonpython 1_extract_pose.pypython 2_pose_from_heatmaps.py 注意因为是在docker里面跑的，所以要把有关什么im.show这种都注释掉，不然会报错。 ===========ヾ(@▽@)ノ装完啦散花============= 最后一个坑：如何在docker容器中显示？]]></content>
+      <categories>
+        <category>CS之路</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+        <tag>深度学习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[word embedding]]></title>
+    <url>%2F2019%2F02%2F22%2Fword-embedding%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
+    <title><![CDATA[RNN VS CNN]]></title>
+    <url>%2F2019%2F02%2F21%2F%E5%90%B4%E6%81%A9%E8%BE%BERNN%2F</url>
+    <content type="text"><![CDATA[写一点个人理解吧。 CNN：它是以“层”（layer)为单位的，每一层的结构可以完全不一样。常见的CNN层有卷积层、池化层、softmax层、池化层；这些基础层之上还有诸如ResNet的远连接，GoogLeNet的Inception层，用来实现一些特定的功能（深层网络、多尺度特征提取等）。 RNN：“层”的概念被弱化了，与之相对突出的是“单元”（cell)的概念。之所以叫Recurrent，就是一个重复的cell自己连自己，每一层的输入尺寸除了新加入的x以外，还有上一个时期的激活值a。这样它就“记住了”在一串序列中之前传进来的信息。进阶的RNN则通过“门”（Gate)来实现特定的功能。具体的内容我还没有非常理解，只实现了一下LSTM的网络架构。 RNN的经典网络 经典的RNN网络比如LSTM和GRU，通过加入控制门，预防梯度消失问题。让非常久远以前的信息也可以被记住，传给后续的单元。 这个概念有点像resnet，把好几层以前的输出传给后一层，但是相比于ResNet人工设计该层用哪些层的前续信息，LSTM中则是通过训练参数，交给网络自行决定在哪个时间“打开”特定的功能。 用LSTM进行生成序列模型时，一般用前一期的内容去预测后一期的音符。]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[LSTM中sigmoid和tanh函数的区别]]></title>
     <url>%2F2019%2F02%2F17%2FLSTM%E4%B8%ADsigmoid%E5%92%8Ctanh%E5%87%BD%E6%95%B0%E7%9A%84%E5%8C%BA%E5%88%AB%2F</url>
     <content type="text"><![CDATA[tanh是用于激活函数的，将实数域中的值映射到[−1,1][-1,1][−1,1]中，可以用其他激活函数替代; sigmoid是用于控制Gate的，将实数域映射到[0,1][0,1][0,1]上，所以sigmoid比较合适。]]></content>
