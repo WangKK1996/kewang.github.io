@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Kay Wang&#39;s Blog">
 <meta property="og:description" content="本章重点  图的Python实现">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-02-15T13:32:29.289Z">
+<meta property="og:updated_time" content="2019-03-30T12:32:09.360Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据结构Python（六）-图">
 <meta name="twitter:description" content="本章重点  图的Python实现">
@@ -391,7 +391,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  312
+                  601
                 </span>
               
 
@@ -407,7 +407,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  2
                 </span>
               
             </div>
@@ -451,6 +451,22 @@
 </ol>
 <h3 id="带权图和网络邻接矩阵和邻接表"><a class="markdownIt-Anchor" href="#带权图和网络邻接矩阵和邻接表"></a> 带权图和网络——邻接矩阵和邻接表</h3>
 <p>邻接矩阵因为要占<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>n</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">n^2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.8141079999999999em;"></span><span class="strut bottom" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit">n</span><span class="vlist"><span style="top:-0.363em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped"><span class="mord mathrm">2</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span>的空间，所以可能带来空间的浪费。所以，采用邻接表的形式。</p>
+<p><a href="https://github.com/WangKK1996/dataStructureWithPyhton/blob/master/Chap7%20Graph/%E9%82%BB%E6%8E%A5%E8%A1%A8.ipynb" target="_blank" rel="noopener">邻接矩阵和邻接表的python实现</a></p>
+<h3 id="图的遍历"><a class="markdownIt-Anchor" href="#图的遍历"></a> 图的遍历</h3>
+<p>图的遍历，指的是按照某种方式系统地访问图中每个顶点，而且仅访问一次的过程。也称为“图的周游”。</p>
+<h4 id="深度优先遍历"><a class="markdownIt-Anchor" href="#深度优先遍历"></a> 深度优先遍历</h4>
+<ul>
+<li>从指定顶点v出发，标记为已访问；</li>
+<li>检查v的邻接结点，从中选择一个未访问的顶点，进行深度优先搜索（一种递归算法）；不存在这种邻接顶点时，就回溯；</li>
+<li>上述操作反复进行，直到v出发可达的所有顶点都已经访问（递归）</li>
+<li>如果图中还有未访问的的顶点，就选出一个未访问的顶点，由它出发重复上述操作，直到所有结点都访问结束了。</li>
+</ul>
+<p>上面这种形式的操作就叫做Deep-First Search(DFS),DFS序列。它不唯一；但是，如果规定了邻接点的顺序，它就是唯一的。</p>
+<h4 id="宽度优先搜索"><a class="markdownIt-Anchor" href="#宽度优先搜索"></a> 宽度优先搜索</h4>
+<ul>
+<li>访问顶点<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>v</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">v_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit" style="margin-right:0.03588em;">v</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.03588em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit">i</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span>,将其标记为已访问;</li>
+<li>访问v的所有相邻结点<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>v</mi><mrow><msub><mi>i</mi><mn>0</mn></msub></mrow></msub><mo separator="true">,</mo><msub><mi>v</mi><mrow><msub><mi>i</mi><mn>1</mn></msub></mrow></msub><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><msub><mi>v</mi><mrow><msub><mi>i</mi><mrow><mi>m</mi><mo>−</mo><mn>1</mn></mrow></msub></mrow></msub></mrow><annotation encoding="application/x-tex">v_{i_0},v_{i_1}...v_{i_{m-1}}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.727225em;vertical-align:-0.29666499999999996em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit" style="margin-right:0.03588em;">v</span><span class="vlist"><span style="top:0.15000000000000002em;margin-right:0.05em;margin-left:-0.03588em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord scriptstyle cramped"><span class="mord"><span class="mord mathit">i</span><span class="vlist"><span style="top:0.15em;margin-right:0.07142857142857144em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-scriptstyle scriptscriptstyle cramped"><span class="mord mathrm">0</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mpunct">,</span><span class="mord"><span class="mord mathit" style="margin-right:0.03588em;">v</span><span class="vlist"><span style="top:0.15000000000000002em;margin-right:0.05em;margin-left:-0.03588em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord scriptstyle cramped"><span class="mord"><span class="mord mathit">i</span><span class="vlist"><span style="top:0.15em;margin-right:0.07142857142857144em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-scriptstyle scriptscriptstyle cramped"><span class="mord mathrm">1</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mord mathrm">.</span><span class="mord mathrm">.</span><span class="mord mathrm">.</span><span class="mord"><span class="mord mathit" style="margin-right:0.03588em;">v</span><span class="vlist"><span style="top:0.14999999999999997em;margin-right:0.05em;margin-left:-0.03588em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord scriptstyle cramped"><span class="mord"><span class="mord mathit">i</span><span class="vlist"><span style="top:0.15000000000000002em;margin-right:0.07142857142857144em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-scriptstyle scriptscriptstyle cramped"><span class="mord scriptscriptstyle cramped"><span class="mord mathit">m</span><span class="mbin">−</span><span class="mord mathrm">1</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span>，</li>
+</ul>
 
       
     </div>
@@ -583,7 +599,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-count">21</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -648,7 +664,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#本章重点"><span class="nav-number">1.</span> <span class="nav-text"> 本章重点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图的概念"><span class="nav-number">2.</span> <span class="nav-text"> 图的概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#带权图和网络邻接矩阵和邻接表"><span class="nav-number">2.1.</span> <span class="nav-text"> 带权图和网络——邻接矩阵和邻接表</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#本章重点"><span class="nav-number">1.</span> <span class="nav-text"> 本章重点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图的概念"><span class="nav-number">2.</span> <span class="nav-text"> 图的概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#带权图和网络邻接矩阵和邻接表"><span class="nav-number">2.1.</span> <span class="nav-text"> 带权图和网络——邻接矩阵和邻接表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图的遍历"><span class="nav-number">2.2.</span> <span class="nav-text"> 图的遍历</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#深度优先遍历"><span class="nav-number">2.2.1.</span> <span class="nav-text"> 深度优先遍历</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#宽度优先搜索"><span class="nav-number">2.2.2.</span> <span class="nav-text"> 宽度优先搜索</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
