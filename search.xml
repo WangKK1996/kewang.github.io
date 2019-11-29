@@ -1,6 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[win10+mx150安装cuda——让你的小笔记本也能显卡加速]]></title>
+    <url>%2F2019%2F11%2F29%2Fwin10%2Bmx150%E5%AE%89%E8%A3%85cuda%E2%80%94%E2%80%94%E8%AE%A9%E4%BD%A0%E7%9A%84%E5%B0%8F%E7%AC%94%E8%AE%B0%E6%9C%AC%E4%B9%9F%E8%83%BD%E6%98%BE%E5%8D%A1%E5%8A%A0%E9%80%9F%2F</url>
+    <content type="text"><![CDATA[thinkpad t480s（win10家庭版）安装cuda和cudnn,给pytorch计算加速。打开核显笔记本的的正确用法。 多查一些教程就很难踩坑了，我大概一个小时装完，极限操作。 cuda 安装 查阅你的显卡支持的版本。 控制面板 —&gt; NVIDIA控制面板 —&gt; 系统信息 —&gt; 组件 确定NVIDIA GeForce MX150支持cuda10.1版本。 去官网下载相关的安装程序 2019年11月，nvidia官网默认下载cuda10.2,一定要注意选择你刚刚查询到的cuda版本，否则会产生不兼容问题。例如我自己搜索了10.1版本下载。 建议选择下载到local而不是network，使用迅雷下载还比较快。 cuda是被直接默认安装到系统盘的，一开始要求你解压的文件夹只是一个临时文件夹，安装完之后会被删除。 检查安装是否成功 在cmd中输入nvcc -V查看。 cudnn安装 cudnn是基于cuda的加速器，可提升原有的gpu算力至1.5倍。是nvidia专门开发的，在下载前会要求你填一个小问卷，选择使用理由什么的。 这一步选择对应的cuda版本即可，下载后得到一个zip文件，里面包含了bin、include、lib三个文件夹，直接复制到cuda的安装文件夹下即可。 nvidia-smi查看显卡使用情况 上面这两步实现之后，还可以添加C:\Program Files\NVIDIA Corporation\NVSMI\到系统变量中，这样下次就可以直接在cmd中输出nvidia-smi查看显卡占用情况了。 pytorch+gpu安装 选择相应的pytorch版本 pytorch+gpu安装要去官网选择对应的OS系统、python版本以及cuda版本。 清华源加速 使用默认源下载会很慢，推荐使用conda的清华源镜像，cmd中配置以下命令即可： 12345conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/conda config --set show_channel_urls yesconda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch/conda install pytorch torchvision cudatoolkit=9.0 （版本号从https://pytorch.org/resources上，查找对应版本）]]></content>
+      <categories>
+        <category>CS之路</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+        <tag>cuda</tag>
+        <tag>pytorch</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[idea 里跑通一个example要花多久?]]></title>
+    <url>%2F2019%2F06%2F03%2Fidea-%E9%87%8C%E8%B7%91%E9%80%9A%E4%B8%80%E4%B8%AAexample%E8%A6%81%E8%8A%B1%E5%A4%9A%E4%B9%85%2F</url>
+    <content type="text"><![CDATA[2天（手动微笑脸） 主要是idea环境配置真的让人想哭。 在project structure里，有一些包是不能手动导入的，必须要选择了然后打包进去（可能这样在打jar包的时候更合适一点吧~）]]></content>
+      <categories>
+        <category>CS之路</category>
+      </categories>
+      <tags>
+        <tag>scala</tag>
+        <tag>spark</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[scala学习]]></title>
+    <url>%2F2019%2F06%2F01%2Fscala%E5%AD%A6%E4%B9%A0%2F</url>
+    <content type="text"><![CDATA[Scala基本语法 scala引用 导入单个包 在导入的时候重命名 在导入的时候隐藏成员 12345import java.awt.&#123;Color,Font&#125;//重命名成员import java.util.&#123;HashMap =&gt; JavaHashMap&#125;// 隐藏成员import java.util.&#123;HashMap =&gt; _, _&#125; // 引入了util包的所有成员，但是HashMap被隐藏了 scala中一切皆对象 一切皆对象的意思是，在scala中，即使是数字，也可以直接调用方法。比如： 11._toString Scala变量 变量声明 var声明变量 val声明常量 变量类型引用 scala中可以不用先声明数据类型，是自己推断出来的。 不过要注意的是，如果没有指定数据类型，那么一定要给声明的变量赋初值。 Scala访问修饰符 public类 private类 Scala的匿名函数 以=&gt;的形式可以定义一个匿名函数，如下： val multiplier = (i:Int) =&gt; i * 10]]></content>
+      <categories>
+        <category>CS之路</category>
+      </categories>
+      <tags>
+        <tag>scala</tag>
+        <tag>saprk</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[t检验和F检验的区别]]></title>
     <url>%2F2019%2F04%2F14%2Ft%E6%A3%80%E9%AA%8C%E5%92%8CF%E6%A3%80%E9%AA%8C%E7%9A%84%E5%8C%BA%E5%88%AB%2F</url>
     <content type="text"><![CDATA[近日重读统计学习方法。 t检验用的t统计量多用在单变量上；F检验用的F统计量，多用在多变量上。（邹至庄检验、变量是否显著的检验都是基于F-test提出的。） F统计量的自由度：是两个卡方分布除以自由度之后的比值。分子的自由度为d1d_1d​1​​，分母的自由度为d2d_2d​2​​，则该统计量就服从自由度为(d1,d2)(d_1,d_2)(d​1​​,d​2​​)的F分布。]]></content>
@@ -31,8 +68,8 @@
         <category>CS之路</category>
       </categories>
       <tags>
-        <tag>python</tag>
         <tag>深度学习</tag>
+        <tag>python</tag>
       </tags>
   </entry>
   <entry>
